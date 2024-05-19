@@ -16,11 +16,34 @@
 	}
 } */
 
+@layer base {
+	h1 {
+		font-size: 28px;
+		font-weight: 700;
+	}
+	h2 {
+		font-size: 22px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 18px;
+		font-weight: 500;
+	}
+}
+
 body {
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(to bottom,
 		transparent,
 		rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+main {
+	width: 100%;
+	max-width: 512px;
+	height: 100%;
+	padding: 0 16px;
+	margin: 0 auto;
 }
 
 @layer utilities {
