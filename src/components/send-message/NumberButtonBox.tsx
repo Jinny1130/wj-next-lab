@@ -1,7 +1,7 @@
 'use-client'
 
-import { useEffect, useState } from "react";
-import NumberButton from "../common/NumberButton";
+import { ReactNode, useEffect, useState } from "react";
+import NumberButton from "./NumberButton";
 
 interface BoxProps {
     className: string,
@@ -43,8 +43,8 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     }
 
     const NumberButtonsRender = () => {
-        const buttonNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, null, 0, 'back']
-        const result:{}[] = [];
+        const buttonNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, null, 0, null]
+        const result:ReactNode[] = [];
 
         buttonNumbers.forEach((buttonNum, index) => {
             result.push(<NumberButton key={index + 1} buttonTargetNumber={buttonNum} className={`w-1/3`} />);

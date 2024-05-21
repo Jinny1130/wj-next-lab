@@ -5,9 +5,10 @@ import "@/styles/globals.css";
 const notoSansKR = Nanum_Gothic({ weight: ['400', '700', '800'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	description: "Next.js 로 만들어 본것들 모아모아🤗",
+	title: "최우진 | Front-end | Resume",
+	description: "안녕하세요👋🏻 프론트엔드 개발자 최우진입니다.",
 	icons: {
-		icon: '/images/wj.png'
+		icon: '/wj.png'
 	}
 };
 

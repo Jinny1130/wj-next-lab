@@ -1,7 +1,7 @@
 'use-client'
 
 interface buttonProps {
-    buttonTargetNumber: [number | string | null ],
+    buttonTargetNumber: (number | null),
     className: string
 }
 
