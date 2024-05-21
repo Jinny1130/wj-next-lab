@@ -1,0 +1,57 @@
+.resume-wrap {
+    >div {
+        padding: 65px 0;
+        &:not(:first-of-type, :last-of-type) {
+            border-bottom: 1px solid #edebeb;
+        }
+        &.contact-wrap {
+            padding: 0 0 65px;
+        }
+    }
+}
+
+.myself-image {
+    max-height: 400px;
+    overflow: hidden;
+    
+    img{
+        width:100%;
+        height: auto;
+    }
+}
+
+.border-bottom-gray {
+    border-bottom: 1px solid #edebeb;
+}
+
+.experience-desc-list, .side-project-desc-list {
+    >div {
+        font-size: 13px;
+        i {
+            margin-right: 6px;
+        }
+        p {
+            width: calc(100% - 10px);
+        }
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .myself-image {
+        max-width: 220px;
+
+        img{
+            max-width: 220px;
+            height: 220px;
+        }
+    }
+
+    .experience-desc-list, .side-project-desc-list {
+        >div {
+            font-size: 16px;
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+}
