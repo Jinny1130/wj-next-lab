@@ -5,7 +5,7 @@ const ContactAndSkill = () => {
     return (
         <div className="contact-wrap w-full flex flex-col items-center sm:flex-row sm:justify-between">
             <div className="myself-image w-full mb-10 rounded-md sm:rounded-full sm:w-1/3 sm:mb-0 md:mr-20 sm:mr-10">
-                <Image src="/woojin_czech.jpg" alt="우진사진" width={220} height={220} />
+                <Image src="/images/woojin_czech.jpg" alt="우진사진" width={220} height={220} />
             </div>
 
             <div className="w-full sm:w-2/3">
