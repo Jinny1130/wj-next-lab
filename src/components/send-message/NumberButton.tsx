@@ -12,7 +12,7 @@ interface buttonProps {
 export default function NumberButton (props: buttonProps) {
 
     function clickNumber(targetNumber:buttonNumber) {
-        if (targetNumber && targetNumber >= 0) {
+        if (targetNumber !== null && targetNumber >= 0) {
             props.clickNumberButton(targetNumber);
         }
         else {
@@ -22,7 +22,7 @@ export default function NumberButton (props: buttonProps) {
 
     return (
         <button className={`${props.className} hover:text-red-500 hover:rounded hover:bg-gray-100 hover:rounded-full`} onClick={ props.buttonTargetNumber !== null ? () => clickNumber(props.buttonTargetNumber) : undefined }>
-            {props.buttonTargetNumber && props.buttonTargetNumber >= 0 ? props.buttonTargetNumber : ''}
+            {props.buttonTargetNumber !== null && props.buttonTargetNumber >= 0 ? props.buttonTargetNumber : ''}
         </button>
     );
 }
