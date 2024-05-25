@@ -9,9 +9,9 @@ import { Jua } from "next/font/google";
 import ArrowIcon from "../common/ArrowIcon";
 
 AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: process.env.AWS_REGION
+    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY,
+    region: process.env.NEXT_PUBLIC_AWS_REGION
 });
 
 const FontJua = Jua({ weight: '400', subsets: ['latin'] });
