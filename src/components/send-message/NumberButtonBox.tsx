@@ -137,10 +137,10 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     return (
         <div className={`relative size-full p-6 sm:p-0 sm:flex sm:flex-col sm:justify-between ${showNumberBoard ? 'before:block before:fixed before:size-full before:inset-x-0 before:inset-y-0 before:bg-black before:opacity-25' : ''}`}>
             
-            <div className={`send-text-area w-full flex flex-col justify-between sm:mb-[80px]`}>
+            {/* <div className={`send-text-area w-full flex flex-col justify-between sm:mb-[80px]`}>
                 <div className={`w-full h-1/3 flex items-center justify-center text-center ${FontJua.className} text-[32px]`}>📮</div>
                 <textarea placeholder="보내시려는 메시지를 입력해주세요 " className={`resize-none w-full h-2/3 min-h-[300px] p-[20px] [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-[20px] overflow-hidden border-collapse placeholder:text-gray-400 placeholder:text-[13px]`} />
-            </div>
+            </div> */}
 
             <div className={`w-full absolute sm:relative bottom-0 left-0 z-10`}>
                 <button className="show-hide-button w-full flex sm:hidden item-center justify-center px-[10px] pt-[8px] pb-[18px] text-base font-bold text-white" onClick={ () => setShowNumberBoard(!showNumberBoard) }>
