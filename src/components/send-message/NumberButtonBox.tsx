@@ -1,7 +1,7 @@
 'use-client'
 
 import "@/styles/send-message.scss";
-import { ReactNode, useEffect, useState } from "react";
+import { ChangeEvent, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import NumberButton from "./NumberButton";
 import { buttonNumber, numbers } from "@/types/SendMessageNumber";
 import { Jua } from "next/font/google";
@@ -134,6 +134,18 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
         }
     }
 
+    // 발송 버튼
+    const sendButton = useMemo(() => {
+        if (!isFirstSettingNumbers && selectedNumbers.length === 8) {
+            return (
+                <button className="bg-sky-100 font-bold text-white rounded-md hover:bg-sky-200 active:bg-sky-300 px-5 py-2">
+                    발송하기
+                </button>
+            )
+        }
+        return <></>
+    }, [selectedNumbers])
+
     return (
         <div className={`relative size-full p-6 sm:p-0 sm:flex sm:flex-col sm:justify-between ${showNumberBoard ? 'before:block before:fixed before:size-full before:inset-x-0 before:inset-y-0 before:bg-black before:opacity-25' : ''}`}>
             
@@ -148,14 +160,18 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                 </button>
                 <div className={`w-full h-[40px] sm:h-fit transition-all sm:transition-none ease-linear delay-50 sm:delay-0 [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className}`}>
                     <div className="[background:var(--GY-20,#FAFAFA)] flex flex-col items-start gap-2 flex-[1_0_0] p-12">
-                        <p className={`text-[color:var(--GY-900,#2B2B2B)] text-xl font-bold leading-6 mb-2 ${FontJua.className}`}>전화번호를 입력해 주세요.</p>
-                        <div className={`flex items-center text-[40px] font-bold leading-[normal] ${FontJua.className}`}>
-                            <p className="start-phone-number mr-[10px]" style={{ fontSize: '40px' }}>010</p>
-                            {
-                                selectedNumbers.map((number, index) =>
-                                    <p id={`number_${index + 1}`} key={index} className={`send-target-numbers ${index === 3 ? 'mr-[10px]' : ''} text-[color:var(--GY-100,#E5E5E5)]`}>{number}</p>
-                                )
-                            }
+                        <div>
+                            <p className={`text-[color:var(--GY-900,#2B2B2B)] text-xl font-bold leading-6 mb-2 ${FontJua.className}`}>전화번호를 입력해 주세요.</p>
+                            <div className={`flex items-center text-[40px] font-bold leading-[normal] ${FontJua.className}`}>
+                                <p className="start-phone-number mr-[10px]" style={{ fontSize: '40px' }}>010</p>
+                                {
+                                    selectedNumbers.map((number, index) =>
+                                        <p id={`number_${index + 1}`} key={index} className={`send-target-numbers ${index === 3 ? 'mr-[10px]' : ''} text-[color:var(--GY-100,#E5E5E5)]`}>{number}</p>
+                                    )
+                                }
+                            </div>
+                            
+                            { sendButton }
                         </div>
                     </div>
                     <div className="flex items-center flex-col sm:items-start sm:flex-row sm:min-h-[400px]">
