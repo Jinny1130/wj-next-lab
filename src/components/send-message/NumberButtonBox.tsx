@@ -1,11 +1,18 @@
 'use-client'
 
+import AWS from 'aws-sdk';
 import "@/styles/send-message.scss";
-import { ChangeEvent, ReactNode, useCallback, useEffect, useMemo, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import NumberButton from "./NumberButton";
 import { buttonNumber, numbers } from "@/types/SendMessageNumber";
 import { Jua } from "next/font/google";
 import ArrowIcon from "../common/ArrowIcon";
+
+AWS.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
+});
 
 const FontJua = Jua({ weight: '400', subsets: ['latin'] });
 
@@ -144,6 +151,27 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
 
     }, [selectedNumbers])
 
+    function sendMessage() {
+        // Create publish parameters
+        const params = {
+            Message: "안녕하세요. \n프론트엔드 개발자 최우진입니다 😀",
+            PhoneNumber: `+82010${selectedNumbers.join('')}`,
+        }
+    
+        const publishTextPromise = new AWS.SNS({ apiVersion: "2010-03-31" })
+        .publish(params)
+        .promise()
+    
+        publishTextPromise
+        .then(function (data:unknown) {
+            alert("문자 발송 성공")
+        })
+        .catch(function (err:Error) {
+            alert('문자 발송 실패')
+            console.error(err, err.stack)
+        })
+    }
+
     return (
         <div className={`relative size-full p-6 sm:p-0 sm:flex sm:flex-col sm:justify-between ${showNumberBoard ? 'before:block before:fixed before:size-full before:inset-x-0 before:inset-y-0 before:bg-black before:opacity-25' : ''}`}>
 
@@ -171,7 +199,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                             
                             { 
                                 showSendButton && 
-                                <button className="bg-sky-200 font-bold text-[#fff] rounded-md hover:bg-sky-300 active:bg-sky-400 px-5 py-2">
+                                <button className="bg-sky-200 font-bold text-[#fff] rounded-md hover:bg-sky-300 active:bg-sky-400 px-5 py-2" onClick={sendMessage}>
                                     발송하기
                                 </button>
                             }
