@@ -107,7 +107,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     useEffect(() => {
 
         showAndHideNumberBoard();
-        setMobileTopAreaTheme();
+        setMobileTopAreaTheme(showNumberBoard);
 
     }, [showNumberBoard])
 
@@ -123,13 +123,13 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
         document.querySelector('.show-hide-button')?.nextElementSibling?.classList.add( showNumberBoard ? 'h-[600px]' : 'h-[40px]' );
 
         if (!showNumberBoard) {
-            setSelectedNumbers([1, 2, 3, 4, 5, 6, 7, 8]);
+            setFirstNumber();
         }
     }
     
     // mobile - top 영역 dimed 과 동일한 스타일컬러 지정 (eg. safari 로 진행시 iphone top area)
-    function setMobileTopAreaTheme() {
-        if (showNumberBoard) {
+    function setMobileTopAreaTheme(showTopDimed:boolean) {
+        if (showTopDimed) {
             const metaTag = document.createElement('meta');
 
             metaTag.setAttribute('name', 'theme-color');
@@ -170,11 +170,16 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
         publishTextPromise
         .then(function (data:unknown) {
             alert("문자 발송 성공🎉")
+            setFirstNumber();
         })
         .catch(function (err:Error) {
             alert('문자 발송 실패😢')
             console.error(err, err.stack)
         })
+    }
+
+    function setFirstNumber() {
+        setSelectedNumbers([1, 2, 3, 4, 5, 6, 7, 8])
     }
 
     return (
