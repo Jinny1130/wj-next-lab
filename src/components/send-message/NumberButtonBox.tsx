@@ -7,6 +7,7 @@ import NumberButton from "./NumberButton";
 import { buttonNumber, numbers } from "@/types/SendMessageNumber";
 import { Jua } from "next/font/google";
 import ArrowIcon from "../common/ArrowIcon";
+import SendIcon from '../common/SendIcon';
 
 AWS.config.update({
     accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
@@ -110,7 +111,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
 
     }, [showNumberBoard])
 
-    const arrowIconInfo = {
+    const whiteSvgIconInfo = {
         iconWidth: 24,
         iconHeight: 24,
         iconFill: '#FFF'
@@ -120,6 +121,10 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     function showAndHideNumberBoard() {
         document.querySelector('.show-hide-button')?.nextElementSibling?.classList.remove( showNumberBoard ? 'h-[40px]' : 'h-[600px]' );
         document.querySelector('.show-hide-button')?.nextElementSibling?.classList.add( showNumberBoard ? 'h-[600px]' : 'h-[40px]' );
+
+        if (!showNumberBoard) {
+            setSelectedNumbers([1, 2, 3, 4, 5, 6, 7, 8]);
+        }
     }
     
     // mobile - top 영역 dimed 과 동일한 스타일컬러 지정 (eg. safari 로 진행시 iphone top area)
@@ -164,10 +169,10 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     
         publishTextPromise
         .then(function (data:unknown) {
-            alert("문자 발송 성공")
+            alert("문자 발송 성공🎉")
         })
         .catch(function (err:Error) {
-            alert('문자 발송 실패')
+            alert('문자 발송 실패😢')
             console.error(err, err.stack)
         })
     }
@@ -182,11 +187,13 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
 
             <div className={`w-full absolute sm:relative bottom-0 left-0 z-10`}>
                 <button className="show-hide-button w-full flex sm:hidden item-center justify-center px-[10px] pt-[8px] pb-[18px] text-base font-bold text-white" onClick={ () => setShowNumberBoard(!showNumberBoard) }>
-                    { <ArrowIcon iconInfo={ arrowIconInfo } className={ `${showNumberBoard ? 'rotate-180' : 'rotate-0'} mr-1` } /> }{`${showNumberBoard ? 'CLOSE' : 'OPEN'} THE NUMBER PAD`}
+                    { <ArrowIcon iconInfo={ whiteSvgIconInfo } className={ `${showNumberBoard ? 'rotate-180' : 'rotate-0'} mr-1` } /> }{`${showNumberBoard ? 'CLOSE' : 'OPEN'} THE NUMBER PAD`}
                 </button>
-                <div className={`w-full h-[40px] sm:h-fit transition-all sm:transition-none ease-linear delay-50 sm:delay-0 [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className}`}>
-                    <div className={`flex flex-col items-start gap-2 flex-[1_0_0] p-12  ${showSendButton ? 'bg-[#1a7cfd1a]' : '[background:var(--GY-20,#FAFAFA)]'}`}>
-                        <div>
+
+                <div className={` w-full h-[40px] sm:h-fit transition-all sm:transition-none ease-linear delay-50 sm:delay-0 [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className} ${showNumberBoard && showSendButton ? '' : ''}`}>
+                    
+                    <div className={` sm:flex items-center justify-between px-10 py-12 ${showSendButton ? 'bg-[#1a7cfd1a] pt-8 pb-6 sm:py-12' : '[background:var(--GY-20,#FAFAFA)]'} `}>
+                        <div className={`flex flex-col items-start gap-2`}>
                             <p className={`text-[color:var(--GY-900,#2B2B2B)] text-xl font-bold leading-6 mb-2 ${FontJua.className}`}>전화번호를 입력해 주세요.</p>
                             <div className={`flex items-center text-[40px] font-bold leading-[normal] ${FontJua.className}`}>
                                 <p className="start-phone-number mr-[10px]" style={{ fontSize: '40px' }}>010</p>
@@ -196,24 +203,26 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                                     )
                                 }
                             </div>
-                            
-                            { 
-                                showSendButton && 
-                                <button className="bg-sky-200 font-bold text-[#fff] rounded-md hover:bg-sky-300 active:bg-sky-400 px-5 py-2" onClick={sendMessage}>
-                                    발송하기
-                                </button>
-                            }
                         </div>
+                        
+                        { 
+                            showSendButton && 
+                            <button className="flex items-center justify-center w-full sm:max-w-[300px] sm:h-[70px] text-[20px] bg-[#008bff] font-bold text-[#fff] rounded-md sm:rounded-2xl hover:bg-[#0088f1] active:bg-[#0085ed] px-[16px] py-[10px] sm:px-[48px] py-[16px] mt-2 sm:mt-0" onClick={sendMessage}>
+                                발송하기 <SendIcon iconInfo={ whiteSvgIconInfo } className={`ml-2`} />
+                            </button>
+                        }
                     </div>
+
                     <div className="flex items-center flex-col sm:items-start sm:flex-row sm:min-h-[400px]">
                         <div className="w-full sm:w-1/2 min-w-[400px] sm:min-w-[50%] px-[48px] pt-8 sm:pt-[56px] pb-4 sm:pb-[48px]">
                             <h3 className="text-[color:var(--GY-700,#555)] text-[15px] sm:text-xl font-medium leading-7 mb-2 sm:mb-4">입력하신 전화번호로 <br className="hidden sm:block" />체험 메시지가 발송됩니다.</h3>
                             <p className=" text-[color:var(--GY-500,#808080)] text-xs font-normal leading-[18px]">입력된 휴대전화번호는 메시지 발송 이외에 <br className="hidden sm:block" />다른 목적으로 사용하거나 수집하지 않습니다.</p>
                         </div>
-                        <div className={`buttons-wrap w-full sm:w-1/2 min-w-[400px] sm:min-w-[50%] px-[30px] sm:px-[70px] pt-6 sm:pt-[40px] pb-[30px] sm:pb-[72px] flex flex-wrap justify-between text-xl ${FontJua.className}`}>
+                        <div className={`buttons-wrap w-full sm:w-1/2 min-w-[400px] sm:min-w-[50%] px-[30px] sm:px-[70px] py-5 sm:pt-[40px] sm:pb-[72px] flex flex-wrap justify-between text-xl ${FontJua.className}`}>
                             { NumberButtonsRender() }
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
