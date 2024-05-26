@@ -207,8 +207,8 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                         
                         { 
                             showSendButton && 
-                            <button className="flex items-center justify-center w-full sm:max-w-[300px] sm:h-[70px] text-[20px] bg-[#008bff] font-bold text-[#fff] rounded-md sm:rounded-2xl hover:bg-[#0088f1] active:bg-[#0085ed] px-[16px] py-[10px] sm:px-[48px] py-[16px] mt-2 sm:mt-0" onClick={sendMessage}>
-                                발송하기 <SendIcon iconInfo={ whiteSvgIconInfo } className={`ml-2`} />
+                            <button className="flex items-center justify-center w-full sm:max-w-[300px] sm:h-[70px] text-[15px] sm:text-[20px] bg-[#008bff] font-bold text-[#fff] rounded-md sm:rounded-2xl hover:bg-[#0088f1] active:bg-[#0085ed] px-[16px] py-[10px] sm:px-[48px] sm:py-[16px] mt-2 sm:mt-0" onClick={sendMessage}>
+                                발송하기 <SendIcon iconInfo={ whiteSvgIconInfo } className={`ml-2 size-[20px] sm:size-[24px]`} />
                             </button>
                         }
                     </div>
