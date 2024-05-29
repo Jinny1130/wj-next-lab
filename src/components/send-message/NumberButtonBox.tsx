@@ -106,8 +106,8 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
 
     useEffect(() => {
 
-        showAndHideNumberBoard();
         setMobileTopAreaTheme(showNumberBoard);
+        if (!showNumberBoard) { setFirstNumber(); }
 
     }, [showNumberBoard])
 
@@ -115,16 +115,6 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
         iconWidth: 24,
         iconHeight: 24,
         iconFill: '#FFF'
-    }
-
-    // mobile - 숫자패드 보이기
-    function showAndHideNumberBoard() {
-        document.querySelector('.show-hide-button')?.nextElementSibling?.classList.remove( showNumberBoard ? 'h-[40px]' : 'h-[600px]' );
-        document.querySelector('.show-hide-button')?.nextElementSibling?.classList.add( showNumberBoard ? 'h-[600px]' : 'h-[40px]' );
-
-        if (!showNumberBoard) {
-            setFirstNumber();
-        }
     }
     
     // mobile - top 영역 dimed 과 동일한 스타일컬러 지정 (eg. safari 로 진행시 iphone top area)
@@ -195,7 +185,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                     { <ArrowIcon iconInfo={ whiteSvgIconInfo } className={ `${showNumberBoard ? 'rotate-180' : 'rotate-0'} mr-1` } /> }{`${showNumberBoard ? 'CLOSE' : 'OPEN'} THE NUMBER PAD`}
                 </button>
 
-                <div className={` w-full h-[40px] sm:h-fit transition-all sm:transition-none ease-linear delay-50 sm:delay-0 [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className} ${showNumberBoard && showSendButton ? '' : ''}`}>
+                <div className={` w-full ${showNumberBoard ? 'h-[600px]' : 'h-[40px]'} sm:h-fit transition-all sm:transition-none ease-in delay-50 sm:delay-0 [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className} ${showNumberBoard && showSendButton ? '' : ''}`}>
                     
                     <div className={` sm:flex items-center justify-between px-10 py-12 ${showSendButton ? 'bg-[#1a7cfd1a] pt-8 pb-6 sm:py-12' : '[background:var(--GY-20,#FAFAFA)]'} `}>
                         <div className={`flex flex-col items-start gap-2`}>
