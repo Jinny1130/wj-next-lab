@@ -24,12 +24,12 @@ const ContactAndSkill = () => {
                         </p>
                         <a className="w-3/4 text-sm text-gray-400 underline hover:text-sky-400" href="mailto:cwjin94@gmail.com">jinnyc1130@gmail.com</a>
                     </div>
-                    {/* <div className="flex items-center">
+                    <div className="flex items-center">
                         <p className="w-1/4 text-sm flex font-semibold text-gray-800 items-baseline">
                             <i className="block w-1 h-1 rounded-full bg-sky-400 mr-1"/>Github
                         </p>
                         <a className="w-3/4 text-sm text-gray-400 underline hover:text-sky-400" href="https://github.com/jinny1130" target="_blank">https://github.com/jinny1130</a>
-                    </div> */}
+                    </div>
                 </div>
 
                 <div className="flex items-start pt-4">

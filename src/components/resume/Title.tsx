@@ -5,7 +5,7 @@ interface OwnProps {
 
 const Title:React.FC<OwnProps> = ({title, size}) => {
     return (
-        <div className={`text-sky-500 font-semibold ${size === 'S' ? 'text-xl' : 'text-4xl'}`}>
+        <div className={`text-sky-500 font-semibold ${size === 'S' ? 'text-lg sm:text-xl' : 'text-4xl'}`}>
             {title}.
         </div>
     )
