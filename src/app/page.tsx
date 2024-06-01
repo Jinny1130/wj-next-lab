@@ -56,7 +56,7 @@ export default function Home() {
                 <SideProject />
             </div>
 
-            <Footer isMobile={isMobile} />
+            <Footer />
         </div>
     );
 }
