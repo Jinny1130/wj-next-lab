@@ -15,12 +15,12 @@ export default function TodoMainTab (props:TodoProps) {
     const [todoList, setTodoList] = useState<string[]>([])
 
     // todo 요일명 체크
-    const addOrRemoveDay = (checked:Boolean, day:string) => {
+    const addOrRemoveDay = (checked:boolean, day:string) => {
         
-        let checkedDay = props.weeklyButtons.find(el => el.id === day);
+        let checkedDay: dayWithIndex | undefined = props.weeklyButtons.find(el => el.id === day);
 
-        if(checked) {
-            setSelectDays<dayWithIndex[]>([...selectDays, checkedDay]);
+        if(checked && checkedDay) {
+            setSelectDays([...selectDays, checkedDay]);
         }
         else {
             setSelectDays(selectDays.filter(el => el.id !== day));
