@@ -6,6 +6,9 @@
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 255, 255, 255;
 	--background-end-rgb: 255, 255, 255;
+
+	--todo-bg-start-rgb: 255, 241, 242;
+    --todo-bg-end-rgb: 249, 168, 212;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -33,6 +36,16 @@ main {
 	height: 100%;
 	padding: 0 16px;
 	margin: 0 auto;
+}
+
+.todo-main-wrap {
+	color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--todo-bg-end-rgb))
+    )
+     rgb(var(--todo-bg-start-rgb));
 }
 
 @layer utilities {
