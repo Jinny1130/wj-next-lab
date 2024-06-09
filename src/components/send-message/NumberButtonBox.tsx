@@ -4,7 +4,7 @@ import AWS from 'aws-sdk';
 import "@/styles/send-message.scss";
 import { ReactNode, useEffect, useState } from "react";
 import NumberButton from "./NumberButton";
-import { buttonNumber, numbers } from "@/types/SendMessageNumber";
+import { buttonNumber, numbers } from "@/types/ProjectTypes";
 import { Jua } from "next/font/google";
 import ArrowIcon from "../common/ArrowIcon";
 import SendIcon from '../common/SendIcon';

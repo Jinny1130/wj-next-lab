@@ -1,6 +1,6 @@
 'use-client'
 
-import { buttonNumber } from "@/types/SendMessageNumber";
+import { buttonNumber } from "@/types/ProjectTypes";
 
 interface buttonProps {
     buttonTargetNumber: buttonNumber,
