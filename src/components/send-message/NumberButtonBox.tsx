@@ -8,6 +8,7 @@ import { buttonNumber, numbers } from "@/types/ProjectTypes";
 import { Jua } from "next/font/google";
 import ArrowIcon from "../common/ArrowIcon";
 import SendIcon from '../common/SendIcon';
+import Image from 'next/image';
 
 AWS.config.update({
     accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
@@ -70,7 +71,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                         (index + 1) === 10 ?
                             <></>
                             : <NumberButton  buttonTargetNumber={buttonNum} 
-                                            className={`w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] ${index === (buttonNumbers.length - 1) ? "bg-[url('/images/send-number/number_back_btn.png')] bg-no-repeat bg-center bg-contain" : ''}`} 
+                                            className={`w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] ${index === (buttonNumbers.length - 1) ? "bg-[url('/images/send-message/number_back_btn.png')] bg-no-repeat bg-center bg-contain" : ''}`} 
                                             clickNumberButton={(number) => clickNumberButton(number)}
                                             deleteLastNumber={() => deleteLastNumber()} />
                     }
@@ -175,12 +176,11 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     return (
         <div className={`relative size-full p-6 sm:p-0 sm:flex sm:flex-col sm:justify-between ${showNumberBoard ? 'before:block before:fixed before:size-full before:inset-x-0 before:inset-y-0 before:bg-black before:opacity-25' : ''}`}>
 
-            {/* <div className={`send-text-area w-full flex flex-col justify-between sm:mb-[80px]`}>
-                <div className={`w-full h-1/3 flex items-center justify-center text-center ${FontJua.className} text-[32px]`}>📮</div>
-                <textarea placeholder="보내시려는 메시지를 입력해주세요 " className={`resize-none w-full h-2/3 min-h-[300px] p-[20px] [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-[20px] overflow-hidden border-collapse placeholder:text-gray-400 placeholder:text-[13px]`} />
-            </div> */}
+            <div className='w-full h-1/2 flex items-center justify-center'>
+                <Image className='message-image w-1/2 max-w-[300px]' src={'/images/send-message/message_img.png'} alt={'메시지 이미지'} width={200} height={200} />
+            </div>
 
-            <div className={`w-full absolute sm:relative bottom-0 left-0 z-10`}>
+            <div className={`w-full h-1/2 absolute sm:relative bottom-0 left-0 z-10 sm:flex sm:items-end`}>
                 <button className="show-hide-button w-full flex sm:hidden item-center justify-center px-[10px] pt-[8px] pb-[18px] text-base font-bold text-white" onClick={ () => setShowNumberBoard(!showNumberBoard) }>
                     { <ArrowIcon iconInfo={ whiteSvgIconInfo } className={ `${showNumberBoard ? 'rotate-180' : 'rotate-0'} mr-1` } /> }{`${showNumberBoard ? 'CLOSE' : 'OPEN'} THE NUMBER PAD`}
                 </button>

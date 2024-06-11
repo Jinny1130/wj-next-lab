@@ -1,3 +1,20 @@
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-18px); /* Move up by 20px */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.message-image {
+    position: relative;
+    animation: upDown 1.5s infinite;
+}
+
 .send-text-area {
     height: calc(100% - 120px);
     textarea {
