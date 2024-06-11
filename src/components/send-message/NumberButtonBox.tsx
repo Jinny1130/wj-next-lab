@@ -176,7 +176,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     return (
         <div className={`relative size-full p-6 sm:p-0 sm:flex sm:flex-col sm:justify-between ${showNumberBoard ? 'before:block before:fixed before:size-full before:inset-x-0 before:inset-y-0 before:bg-black before:opacity-25' : ''}`}>
 
-            <div className='w-full h-1/2 flex items-center justify-center'>
+            <div className='w-full h-full sm:h-1/2 flex items-center justify-center'>
                 <Image className='message-image w-1/2 max-w-[300px]' src={'/images/send-message/message_img.png'} alt={'메시지 이미지'} width={200} height={200} />
             </div>
 
