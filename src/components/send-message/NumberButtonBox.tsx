@@ -180,7 +180,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                 <Image className='message-image w-1/2 max-w-[300px]' src={'/images/send-message/message_img.png'} alt={'메시지 이미지'} width={200} height={200} />
             </div>
 
-            <div className={`w-full h-1/2 absolute sm:relative bottom-0 left-0 z-10 sm:flex sm:items-end`}>
+            <div className={`w-full sm:h-1/2 absolute sm:relative bottom-0 left-0 z-10 sm:flex sm:items-end`}>
                 <button className="show-hide-button w-full flex sm:hidden item-center justify-center px-[10px] pt-[8px] pb-[18px] text-base font-bold text-white" onClick={ () => setShowNumberBoard(!showNumberBoard) }>
                     { <ArrowIcon iconInfo={ whiteSvgIconInfo } className={ `${showNumberBoard ? 'rotate-180' : 'rotate-0'} mr-1` } /> }{`${showNumberBoard ? 'CLOSE' : 'OPEN'} THE NUMBER PAD`}
                 </button>
