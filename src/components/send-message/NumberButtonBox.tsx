@@ -180,13 +180,12 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                 <Image className='message-image w-1/2 max-w-[300px]' src={'/images/send-message/message_img.png'} alt={'메시지 이미지'} width={200} height={200} />
             </div>
 
-            <div className={`w-full sm:h-1/2 absolute sm:relative bottom-0 left-0 z-10 sm:flex sm:items-end`}>
+            <div className={`w-full sm:h-1/2 absolute sm:relative ${showNumberBoard ? 'bottom-0' : 'bottom-[-550px]'} left-0 z-10 sm:flex sm:items-end transition-all sm:transition-none ease-in-out delay-[50ms] sm:delay-0`}>
                 <button className="show-hide-button w-full flex sm:hidden item-center justify-center px-[10px] pt-[8px] pb-[18px] text-base font-bold text-white" onClick={ () => setShowNumberBoard(!showNumberBoard) }>
                     { <ArrowIcon iconInfo={ whiteSvgIconInfo } className={ `${showNumberBoard ? 'rotate-180' : 'rotate-0'} mr-1` } /> }{`${showNumberBoard ? 'CLOSE' : 'OPEN'} THE NUMBER PAD`}
                 </button>
 
-                <div className={` w-full ${showNumberBoard ? 'h-[600px]' : 'h-[40px]'} sm:h-fit transition-all sm:transition-none ease-in delay-50 sm:delay-0 [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className} ${showNumberBoard && showSendButton ? '' : ''}`}>
-                    
+                <div className={` w-full h-fit [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className} ${showNumberBoard && showSendButton ? '' : ''}`}>
                     <div className={` sm:flex items-center justify-between px-10 py-12 ${showSendButton ? 'bg-[#1a7cfd1a] pt-8 pb-6 sm:py-12' : '[background:var(--GY-20,#FAFAFA)]'} `}>
                         <div className={`flex flex-col items-start gap-2`}>
                             <p className={`text-[color:var(--GY-900,#2B2B2B)] text-xl font-bold leading-6 mb-2 ${FontJua.className}`}>전화번호를 입력해 주세요.</p>
