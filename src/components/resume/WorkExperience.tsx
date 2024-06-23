@@ -5,28 +5,30 @@ import DotWithText from "./DotWithText"
 import NewTabIcon from "../common/NewTabIcon"
 import Link  from 'next/link'
 
-const experienceList = [
+interface Experience {
+    id: string;
+    title: string;
+    period: string;
+    pageAbout?: string | TrustedHTML;
+    pageUrl?: string;
+    describe: string[];
+  }
+
+const experienceList:Experience[] = [
     {
         id: 'admin',
         title: "Admin 2.0",
         period: "2021.08 ~ ",
-        pageAbout: "사용자들과 사업장의 정보 등을 관리하는 백오피스 페이지",
+        pageAbout: "결제선생 서비스를 이용하는 사용자들과 사업장을 관리하는 백오피스 페이지이며 기존에 사용 중이던 <b>1.0 버전</b>과 리뉴얼 된 <b>2.0 버전</b>으로 나누어져 있습니다. 이 페이지에서는 <b>CS 상담 관리</b>, <b>사업장 등록</b>, <b>결제 수단 관리</b>, <b>정산 관리</b>, <b>어드민 멤버 관리</b> 등 서비스 전반의 운영을 통합적으로 관리할 수 있는 기능을 제공합니다.",
         describe: [
-            "기존 Admin1.0 에서 2.0으로 리뉴얼하는 페이지를 구축하고 프론트 개발 리드를 하였습니다.",
-            "Vue 와 Vue Router Tab 을 활용하여 Tab UI 로 간편하게 동작하도록 작업했습니다.",
-            "컴포넌트 설계로 다양한 페이지의 중복코드 발생을 방지하였고, 신규 페이지의 개발속도를 단축시켰습니다.",
-            "서비스 사용신청 사업장의 심사요청을 NICE 통신 연결로 자동 심사승인 플로우 연결하여 사업장 가입속도를 증가시켜 유치고객을 늘렸습니다.",
-        ]
-    },
-    {
-        id: 'payssam',
-        title: "결제선생 랜딩페이지",
-        period: "2021.08 ~ ",
-        pageAbout: "결제선생 서비스 소개 홈페이지",
-        pageUrl: "https://payssam.kr/",
-        describe: [
-            "등록심사 요청이 홀드 된 사업장에 재심사 요청을 하는 보완요청 페이지를 개발, 유지보수 작업을 하였습니다.",
-            "반응형 레이아웃으로 개발하였습니다."
+            "기존 1.0 버전에서는 주로 유지보수 업무를 담당하며, 안정적인 운영을 위한 <b>문제 해결과 개선 작업</b>을 수행하였습니다.",
+            "사수가 없는 환경에서 <b>Admin 2.0을 신규 구축</b>하고 <b>개발 리드를 담당</b>하였으며, 코드의 유지보수성과 확장성을 고려하여 <b>폴더 구조를 체계적으로 분류하고 정의</b>하였습니다.",
+            "주요 기능별로 폴더를 나누어 <b>공통 컴포넌트, 유틸리티(helper) 함수, 스타일(css/scss) 파일 등</b>을 별도의 디렉토리에 정리하여 가독성을 높였습니다.",
+            "컴포넌트 설계로 다양한 페이지의 <b>중복코드 발생을 방지</b>하였고, <b>신규 페이지의 개발속도를 단축</b>시켰습니다.",
+            "서비스 사용 신청 사업장의 심사 과정을 <b>OCR 서류인식</b>과 <b>NICE 통신 연결을 통해 자동화</b>하여, <b>심사 승인 속도를 높이고 유치 고객을 증가</b>시켰습니다.",
+            "1.0과 2.0 간의 이동 버튼을 각 페이지 메인에 추가하여, 새 창으로 열리는 페이지 간에 <b>postMessage로 로그인 정보 교환</b>을 통해 재로그인 없이 다른 버전의 어드민 서비스를 이용할 수 있도록 구현하였습니다.",
+            "어드민 메뉴마다 연동되어 있는 <b>목록 조회 API</b>와 <b>엑셀 다운로드 목록 조회 API</b>를 <b>사용자의 동작 순간에 맞춰 분류</b>하여 연동함으로써, <b>API 과부하를 방지</b>하고 효율성을 높였습니다.",
+            "외부 플러그인 사용시 플러그인의 기능 활용과 동시에 기획 디자이너의 디자인 요구 충족을 위해 <b>스타일을 재정의하고 컴포넌트로 제작</b>하여, <b>활용성을 높이고 타 팀과의 원활한 소통</b>을 이뤄냈습니다.",
         ]
     },
     {
@@ -66,11 +68,25 @@ const experienceList = [
         ]
     },
     {
-        id: 'other',
-        title: "The Other",
-        period: "-",
+        id: 'payssam',
+        title: "결제선생 랜딩페이지",
+        period: "2021.08 ~ ",
+        pageAbout: "결제선생 서비스 소개 홈페이지",
+        pageUrl: "https://payssam.kr/",
         describe: [
-            "청구서, 출결 메시지 발송 체험 페이지 - 키오스크 화면 기준으로 메시지 발송체험하는 화면을 개발하였습니다.",
+            "등록심사 요청이 홀드 된 사업장에 재심사 요청을 하는 보완요청 페이지를 개발, 유지보수 작업을 하였습니다.",
+            "반응형 레이아웃으로 개발하였습니다."
+        ]
+    },
+    {
+        id: 'kiosk',
+        title: "결제선생 및 출결선생 체험페이지",
+        period: "2024.01",
+        pageAbout: "결제선생 및 출결선생의 핵심 기능인 <b>청구서와 출결 메시지 발송을 체험</b>할 수 있는 페이지로, 서비스 이용을 간접적으로 경험할 수 있습니다.",
+        describe: [
+            "<b>HTML, CSS, 및 Vanilla JS를 사용</b>하여 페이지를 제작하였습니다.",
+            "'Spline 3D'와 'Lottie' 이미지를 JavaScript로 연동해 <b>인터랙티브한 UI 페이지를 구현</b>했습니다.",
+            "2일이라는 <b>제한된 기한 내</b>에 효율적으로 페이지를 완성하여 <b>높은 품질의 결과물을 제공</b>했습니다.",
         ]
     },
 ]
@@ -100,12 +116,15 @@ const WorkExperience = () => {
                                         <p className="text-xs sm:text-sm text-gray-600">{ exp.period }</p>
                                     </div>
                                     
-                                    <div className={`text-xs sm:text-sm text-gray-600 ${exp.title === 'The Other' ? 'hidden' : ''}`}>
-                                        <span className="mr-2">👉🏻</span>{ exp.pageAbout }
-                                        {exp.id === 'hissam' && <span className="block mt-1 ml-3.5 text-[11px] text-gray-500">* 연결링크는 출결선생 안내 랜딩페이지 입니다. (출석체크 페이지는 서비스 이용자에 한해서 진입이 가능한 페이지)</span>}
+                                    <div className={`flex text-xs sm:text-[14px] leading-6 text-gray-600 ${exp.title === 'The Other' ? 'hidden' : ''}`}>
+                                        <span className="mr-2">👉🏻</span>
+                                        <span>
+                                            {exp.pageAbout && <span dangerouslySetInnerHTML={{ __html: exp.pageAbout }}></span>}
+                                            {exp.id === 'hissam' && <span className="block mt-1 ml-3.5 text-[11px] text-gray-500">* 연결링크는 출결선생 안내 랜딩페이지 입니다. (출석체크 페이지는 서비스 이용자에 한해서 진입이 가능함)</span>}
+                                        </span>
                                     </div>
 
-                                    <div className="pt-8 experience-desc-list">
+                                    <div className="pt-8 experience-desc-list text-[#2b2b2b]">
                                         {
                                             exp.describe.map( (desc, index) => {
                                                 return (
