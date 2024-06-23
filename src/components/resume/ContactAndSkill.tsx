@@ -39,9 +39,9 @@ const ContactAndSkill = () => {
                     }
                 </div>
 
-                <div className="sm:flex sm:flext-start pt-5">
+                <div className="pt-5">
                     <Title title="Skills" size="M"/>
-                    <div className="mt-3 sm:ml-8 sm:mt-0">
+                    <div className="mt-3">
                         {
                             haveSkills.map((skill, index) => {
                                 return (
