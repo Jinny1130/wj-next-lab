@@ -1,6 +1,4 @@
-/* ==================================================
-    * common types
-================================================== */
+// common types
 
 export type SvgIconInfo = {
     iconWidth: SizePixel,

@@ -1,6 +1,6 @@
 'use client'
 
-import { DayWithIndex } from '@/types/ProjectTypes'
+import { DayWithIndex } from '@/types/TodoTypes'
 import Image from "next/image"
 import { useState } from "react"
 

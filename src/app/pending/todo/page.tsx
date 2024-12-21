@@ -3,7 +3,7 @@
 import WeeklyTab from '@/components/todo/WeeklyTab'
 import TodoMainTab from '@/components/todo/TodoMainTab';
 import TodoTab from '@/components/todo/TodoTab'
-import { DayWithIndex } from '@/types/ProjectTypes';
+import { DayWithIndex } from '@/types/TodoTypes';
 import { useState, useEffect } from 'react';
 
 const weeklyButtons:DayWithIndex[] = [

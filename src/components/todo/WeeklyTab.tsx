@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { Day, Week } from '@/types/ProjectTypes';
+import { Day, Week } from '@/types/TodoTypes';
 
 interface TodoProps {
     selectedDay: String,
