@@ -1,5 +1,5 @@
 /* ==================================================
-    * "project/send-message" type 
+    * "send-message" type 
 ================================================== */
 
 export type ButtonNumber = (number | null);
@@ -7,7 +7,7 @@ export type ButtonNumber = (number | null);
 export type ButtonNumbers = ButtonNumber[];
 
 /* ==================================================
-    * "project/todo" type 
+    * "todo" type 
 ================================================== */
 
 export type Day = {
