@@ -1,23 +1,23 @@
 'use client'
 
-import { dayWithIndex } from '@/types/ProjectTypes'
+import { DayWithIndex } from '@/types/ProjectTypes'
 import Image from "next/image"
 import { useState } from "react"
 
 interface TodoProps {
-    weeklyButtons:dayWithIndex[],
+    weeklyButtons:DayWithIndex[],
 }
 
 export default function TodoMainTab (props:TodoProps) {
 
-    const [selectDays, setSelectDays] = useState<dayWithIndex[]>([])
+    const [selectDays, setSelectDays] = useState<DayWithIndex[]>([])
     const [inputValue, setInputValue] = useState<string>('')
     const [todoList, setTodoList] = useState<string[]>([])
 
     // todo 요일명 체크
     const addOrRemoveDay = (checked:boolean, day:string) => {
         
-        let checkedDay: dayWithIndex | undefined = props.weeklyButtons.find(el => el.id === day);
+        let checkedDay: DayWithIndex | undefined = props.weeklyButtons.find(el => el.id === day);
 
         if(checked && checkedDay) {
             setSelectDays([...selectDays, checkedDay]);
@@ -30,7 +30,7 @@ export default function TodoMainTab (props:TodoProps) {
     }
     // 선택된 요일 순서대로 나열
     const sortingSelectDays = () => {
-        selectDays.sort((a:dayWithIndex, b:dayWithIndex): number => {
+        selectDays.sort((a:DayWithIndex, b:DayWithIndex): number => {
             return a.dayIndex - b.dayIndex;
         });
 
@@ -62,7 +62,7 @@ export default function TodoMainTab (props:TodoProps) {
 
         <div className='flex mt-14 w-80 justify-between'>
             {
-                props.weeklyButtons.map((dayData:dayWithIndex) => {
+                props.weeklyButtons.map((dayData:DayWithIndex) => {
                     return (
                         <label htmlFor={dayData.id}  key={dayData.id} className='cursor-pointer'>
                             <input  id={dayData.id}  name='day' type='checkbox'  onChange={ (e) => addOrRemoveDay(e.target.checked, dayData.id) } className='hidden' />

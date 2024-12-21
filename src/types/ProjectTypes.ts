@@ -2,21 +2,21 @@
     * "project/send-message" type 
 ================================================== */
 
-export type numbers = buttonNumber[];
+export type ButtonNumber = (number | null);
 
-export type buttonNumber = (number | null);
+export type ButtonNumbers = ButtonNumber[];
 
 /* ==================================================
     * "project/todo" type 
 ================================================== */
 
-export type week = day[]
-
-export type day = {
+export type Day = {
     id: string;
     name: string;
 }
 
-export type dayWithIndex = day & {
+export type Week = Day[]
+
+export type DayWithIndex = Day & {
     dayIndex: number;
 }

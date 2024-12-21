@@ -1,17 +1,17 @@
 'use-client'
 
-import { buttonNumber } from "@/types/ProjectTypes";
+import { ButtonNumber } from "@/types/ProjectTypes";
 
-interface buttonProps {
-    buttonTargetNumber: buttonNumber,
+interface ButtonProps {
+    buttonTargetNumber: ButtonNumber,
     className: string,
-    clickNumberButton: (targetNumber:buttonNumber) => void,
+    clickNumberButton: (targetNumber:ButtonNumber) => void,
     deleteLastNumber: () => void,
 }
 
-export default function NumberButton (props: buttonProps) {
+export default function NumberButton (props: ButtonProps) {
 
-    function clickNumber(targetNumber:buttonNumber) {
+    function clickNumber(targetNumber:ButtonNumber) {
         if (targetNumber !== null && targetNumber >= 0) {
             props.clickNumberButton(targetNumber);
         }

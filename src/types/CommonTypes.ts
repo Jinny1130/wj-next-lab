@@ -2,10 +2,10 @@
     * common types
 ================================================== */
 
-export type svgIconInfo = {
-    iconWidth: sizePixel,
-    iconHeight: sizePixel,
+export type SvgIconInfo = {
+    iconWidth: SizePixel,
+    iconHeight: SizePixel,
     iconFill: string,
 }
 
-export type sizePixel = string | number;
+export type SizePixel = string | number;

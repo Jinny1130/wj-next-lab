@@ -1,13 +1,13 @@
 'use-client'
 
-import { svgIconInfo } from "@/types/CommonTypes"
+import { SvgIconInfo } from "@/types/CommonTypes"
 
-interface iconProps {
-    iconInfo: svgIconInfo,
+interface IconProps {
+    iconInfo: SvgIconInfo,
     className: string,
 }
 
-const ArrowIcon = (props:iconProps) => {
+const ArrowIcon = (props:IconProps) => {
     return (
         <svg className={props.className} xmlns="http://www.w3.org/2000/svg" width={props.iconInfo.iconWidth} height={props.iconInfo.iconHeight} fill={props.iconInfo.iconFill} viewBox={`0 0 ${props.iconInfo.iconWidth} ${props.iconInfo.iconHeight}`}>
             <g>

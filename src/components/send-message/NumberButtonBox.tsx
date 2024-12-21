@@ -4,7 +4,7 @@ import AWS from 'aws-sdk';
 import "@/styles/send-message.scss";
 import { ReactNode, useEffect, useState } from "react";
 import NumberButton from "./NumberButton";
-import { buttonNumber, numbers } from "@/types/ProjectTypes";
+import { ButtonNumber, ButtonNumbers } from "@/types/ProjectTypes";
 import { Jua } from "next/font/google";
 import ArrowIcon from "../common/ArrowIcon";
 import SendIcon from '../common/SendIcon';
@@ -24,7 +24,7 @@ interface BoxProps {
 
 const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
 
-    const [ selectedNumbers, setSelectedNumbers ] = useState<numbers>([1, 2, 3, 4, 5, 6, 7, 8]);
+    const [ selectedNumbers, setSelectedNumbers ] = useState<ButtonNumbers>([1, 2, 3, 4, 5, 6, 7, 8]);
     const isFirstSettingNumbers = (selectedNumbers.join('') === '12345678');
     
     useEffect(() => {
@@ -83,7 +83,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     };
 
     // NumberButton click
-    function clickNumberButton(clickNumber:buttonNumber) {
+    function clickNumberButton(clickNumber:ButtonNumber) {
         if (isFirstSettingNumbers) {
             setSelectedNumbers([clickNumber]);
         }
@@ -176,7 +176,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     return (
         <div className={`relative size-full p-6 sm:p-0 sm:flex sm:flex-col sm:justify-between ${showNumberBoard ? 'before:block before:fixed before:size-full before:inset-x-0 before:inset-y-0 before:bg-black before:opacity-25' : ''}`}>
 
-            <div className='w-full h-full sm:h-1/2 flex items-center justify-center'>
+            <div className='w-full h-full sm:h-[40%] flex items-center justify-center'>
                 <Image className='message-image w-1/2 max-w-[300px]' src={'/images/send-message/message_img.png'} alt={'메시지 이미지'} width={200} height={200} />
             </div>
 
