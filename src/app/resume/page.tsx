@@ -1,10 +1,17 @@
 'use client'
 
+import "@/styles/resume.scss";
 import Header from '@/components/common/Header';
+import NameWrap from "@/components/resume/NameWrap";
+import ContactAndSkill from '@/components/resume/ContactAndSkill'
+import Introduce from "@/components/resume/Introduce";
+import Career from "@/components/resume/Career";
+import WorkExperience from "@/components/resume/WorkExperience";
+import SideProject from "@/components/resume/SideProject";
 import Footer from '@/components/common/Footer';
 import { useEffect, useState } from "react"
 
-export default function Home() {
+export default function ResumeMain () {
     const [isMobile, setIsMobile] = useState('pc');
 
     useEffect( () => {
@@ -37,10 +44,23 @@ export default function Home() {
     }, [])
 
     return (
-        <div>
-            <Header />
+        <>
+            <title>최우진 | Resume</title>
 
-            <Footer />
-        </div>
+            <div>
+                <Header />
+
+                <div className="resume-wrap max-w-4xl pt-24 px-6 mx-auto sm:px-3">
+                    <NameWrap />
+                    <ContactAndSkill />
+                    <Introduce isMobile={isMobile} />
+                    <Career isMobile={isMobile} />
+                    <WorkExperience />
+                    <SideProject />
+                </div>
+
+                <Footer />
+            </div>
+        </>
     );
 }
