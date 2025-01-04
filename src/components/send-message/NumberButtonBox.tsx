@@ -150,7 +150,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
     function sendMessage() {
         // Create publish parameters
         const params = {
-            Message: "안녕하세요. \n프론트엔드 개발자 최우진입니다 😀",
+            Message: "안녕하세요.\n프론트엔드 최우진입니다😀\n본 메세지는 AWS SNS를 이용하여 구현하였습니다. 테스트해주셔서 감사합니다.",
             PhoneNumber: `+82010${selectedNumbers.join('')}`,
         }
     
@@ -186,7 +186,7 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
                 </button>
 
                 <div className={` w-full h-fit [background:var(--wt-100,#FFF)] shadow-[0_-8px_30px_rgba(0,0,0,0.25)] sm:shadow-[0px_10px_20px_0px_rgba(0,0,0,0.10),0px_36px_72px_0px_rgba(0,0,0,0.10)] rounded-t-[48px] sm:rounded-[48px] overflow-hidden ${boxProps.className} ${showNumberBoard && showSendButton ? '' : ''}`}>
-                    <div className={` sm:flex items-center justify-between px-10 py-12 ${showSendButton ? 'bg-[#1a7cfd1a] pt-8 pb-6 sm:py-12' : '[background:var(--GY-20,#FAFAFA)]'} `}>
+                    <div className={` sm:flex items-center justify-between p-10 ${showSendButton ? 'bg-[#1a7cfd1a] pt-8 pb-6 sm:py-12' : '[background:var(--GY-20,#FAFAFA)]'} `}>
                         <div className={`flex flex-col items-start gap-2`}>
                             <p className={`text-[color:var(--GY-900,#2B2B2B)] text-xl font-bold leading-6 mb-2 ${FontJua.className}`}>전화번호를 입력해 주세요.</p>
                             <div className={`flex items-center text-[40px] font-bold leading-[normal] ${FontJua.className}`}>
