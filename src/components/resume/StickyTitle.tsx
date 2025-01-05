@@ -22,15 +22,15 @@ const Mark = styled.i`
 
 const StickyTitle:React.FC<OwnProps> = ({ stickyTitleInfo }) => {
     return (
-        <div className='w-full h-fit font-semibold text-sky-500 text-[23px] bg-white py-4 sticky top-14 sm:top-16 sm:w-[25%] mr-[20px]'>
+        <div className={`w-full h-fit font-semibold text-sky-500 bg-white py-4 sticky top-14 sm:top-16 sm:w-[22%] mr-[20px] ${stickyTitleInfo.id === 'paymint' ? ' text-[22px]' : 'text-[20px]'}`}>
             {
                 stickyTitleInfo.link ?
                 <Link href={ stickyTitleInfo.link || '' } target="_blank" className="flex items-center hover:underline">
                     { stickyTitleInfo.title }
-                    <NewTabIcon iconInfo={{iconWidth:24, iconHeight:24, iconFill:'#0ea5e9'}} className="ml-[8px]"/>
+                    <NewTabIcon iconInfo={{iconWidth:22, iconHeight:22, iconFill:'#0ea5e9'}} className="ml-[5px]"/>
                 </Link>
                 :
-                <div className="">
+                <div>
                     { stickyTitleInfo.title }
                 </div>
             }
@@ -38,15 +38,9 @@ const StickyTitle:React.FC<OwnProps> = ({ stickyTitleInfo }) => {
                  stickyTitleInfo.addExplanation &&
                 <div className="flex items-start text-[10px] font-normal text-[#888]">
                     <Mark />
-                    <div>
-                        {
-                            stickyTitleInfo.addExplanation.map((explanation, index) => {
-                                return (
-                                    <span className="mr-[3px] sm:mr-0 sm:block">{ explanation }</span>
-                                )
-                            })
-                        }
-                    </div>
+                    <p className="mr-[3px] sm:mr-0 sm:block">
+                        { stickyTitleInfo.addExplanation }
+                    </p>
                 </div>
             }
         </div>
