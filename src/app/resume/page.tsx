@@ -7,6 +7,7 @@ import Contact from '@/components/resume/Contact'
 import Introduce from "@/components/resume/Introduce";
 import Career from "@/components/resume/Career";
 import WorkExperience from "@/components/resume/WorkExperience";
+import WorkExperienceOld from "@/components/resume/WorkExperience_old";
 import OtherExperience from "@/components/resume/OtherExperience";
 import Footer from '@/components/common/Footer';
 import { useEffect, useState } from "react"
@@ -54,8 +55,9 @@ export default function ResumeMain () {
                     <NameWrap />
                     <Contact />
                     <Introduce isMobile={isMobile} />
-                    <Career isMobile={isMobile} />
+                    {/* <Career isMobile={isMobile} /> */}
                     <WorkExperience />
+                    <WorkExperienceOld />
                     <OtherExperience />
                 </div>
 

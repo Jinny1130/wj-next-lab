@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import NumberButtonBox from '@/components/send-message/NumberButtonBox'
 import Footer from '@/components/common/Footer';
 
-let FooterWrap = styled.div`
+const FooterWrap = styled.div`
     > div{
         width: 100%;
         position: absolute;

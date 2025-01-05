@@ -1,5 +1,5 @@
 interface OwnProps {
-    title: String,
+    title?: String,
     size: String   
 }
 
