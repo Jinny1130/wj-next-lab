@@ -21,7 +21,7 @@ const sideProjectList = [
 const SideProject = () => {
     return (
         <div>
-            <Title title="Side Project" size="L" />
+            <Title title="Other Experience" size="L" />
             <div className="px-1 py-3.5 flex flex-col sm:flex-row">
                 <h3 className="block w-full h-fit font-semibold text-sky-500 text-2xl bg-white py-4 sticky top-14 sm:top-16 sm:w-1/5">리딩오션</h3>
 

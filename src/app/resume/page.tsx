@@ -3,11 +3,11 @@
 import "@/styles/resume.scss";
 import Header from '@/components/common/Header';
 import NameWrap from "@/components/resume/NameWrap";
-import ContactAndSkill from '@/components/resume/ContactAndSkill'
+import Contact from '@/components/resume/Contact'
 import Introduce from "@/components/resume/Introduce";
 import Career from "@/components/resume/Career";
 import WorkExperience from "@/components/resume/WorkExperience";
-import SideProject from "@/components/resume/SideProject";
+import OtherExperience from "@/components/resume/OtherExperience";
 import Footer from '@/components/common/Footer';
 import { useEffect, useState } from "react"
 
@@ -52,11 +52,11 @@ export default function ResumeMain () {
 
                 <div className="resume-wrap max-w-4xl pt-24 px-6 mx-auto sm:px-3">
                     <NameWrap />
-                    <ContactAndSkill />
+                    <Contact />
                     <Introduce isMobile={isMobile} />
                     <Career isMobile={isMobile} />
                     <WorkExperience />
-                    <SideProject />
+                    <OtherExperience />
                 </div>
 
                 <Footer />
