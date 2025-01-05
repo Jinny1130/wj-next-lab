@@ -1,19 +1,17 @@
 export type StickyTitleInfo = {
+    id: string,
     title: string,
     link?: string,
-    addExplanation?: string[];
+    addExplanation?: string;
 }
 
 export type DetailWorkExperienceInfo = {
-    id?: string,
-    pageAbout?: string | TrustedHTML,
     title?: string,
     period?: string,
-    pageUrl?: string,
     describe?: string[]
 }
 
-export type WorkExperienceInfo = {
-    mainTitle: StickyTitleInfo,
-    detailWorkExperiences?: DetailWorkExperienceInfo[],
+export type WorkPageAbout = {
+    period: string,
+    pageAbout: string | TrustedHTML,
 }
