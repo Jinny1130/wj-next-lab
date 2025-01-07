@@ -51,9 +51,12 @@ const WorkExperience = () => {
                                     <Career />
                                     :
                                     <div>
-                                        <div className="whitespace-pre-line py-3 text-sm sm:text-base">
-                                            <span dangerouslySetInnerHTML={{ __html: workPageAbout[experience.id].pageAbout }}></span>
-                                        </div>
+                                        {
+                                            workPageAbout[experience.id].pageAbout &&
+                                            <div className="flex flex-start whitespace-pre-line py-3 text-sm sm:text-base text-[#222]">
+                                                <span dangerouslySetInnerHTML={{ __html: workPageAbout[experience.id].pageAbout }}></span>
+                                            </div>
+                                        }
                                         
                                         <DetailWorkExperience workId={ experience.id } />
                                     </div>

@@ -7,6 +7,7 @@ export type StickyTitleInfo = {
 
 export type DetailWorkExperienceInfo = {
     title?: string,
+    projectSummary?: string,
     period?: string,
     describe?: string[]
 }
