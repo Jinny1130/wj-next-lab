@@ -56,3 +56,78 @@
         }
     }
 }
+
+.sticky_title_explanation .mark {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-right: 2px;
+
+    &::before {
+        content: '※';
+        font-style: normal;
+    }
+    & + p {
+        max-width: calc(100% - 36px);
+        word-break: keep-all;
+    }
+}
+
+.sticky_title_wrap {
+    width: 100%;
+    &::before {
+        display: none;
+    }
+    @media screen and (min-width: 640px) {
+        position: relative;
+        width: 24%;
+        &::before {
+            content: '';
+            display: block;
+            width: 1.5px;
+            height: -webkit-fill-available;
+            background: linear-gradient(transparent, #00acff, transparent);
+            opacity: .25;
+            position: absolute;
+            right: 18px;
+            top: 0;
+            z-index: 2;
+        }
+    }
+}
+.career_period_wrap {
+    .blue_title {
+        font-size: 18px;
+    }
+}
+.teck_stack_wrap {
+    >div {
+        & > div{
+            &:first-child {
+                min-width: 180px;
+                padding-bottom: 0;
+            }
+            &:last-child {
+                word-break: break-all;
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        & > p {
+            margin-left: 10px;
+        }
+        .teck {
+            font-size: 16px;
+            background-color: whitesmoke;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+            margin: 4px;
+        }
+        .blue_title {
+            font-weight: 900;
+            font-size: 16px;
+            padding-top: 4px;
+        }
+    }
+}

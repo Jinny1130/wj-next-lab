@@ -1,42 +1,5 @@
-import styled from 'styled-components';
 import DetailExperienceTitle from "@/components/resume/DetailExperienceTitle";
 import Title from "@/components/resume/Title";
-
-const CareerPeriodWrap = styled.div`
-    .blue_title {
-        font-size: 18px;
-    }
-`
-
-const TeckStackWrap = styled.div`
-    >div {
-        & > div:first-child {
-            min-width: 180px;
-            padding-bottom: 0;
-        }
-        & > div:last-child {
-            word-break: break-all;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        & > p {
-            margin-left: 10px;
-        }
-        .teck {
-            font-size: 16px;
-            background-color: whitesmoke;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-weight: 500;
-            margin: 4px;
-        }
-        .blue_title {
-            font-weight: 900;
-            font-size: 16px;
-            padding-top: 4px;
-        }
-    }
-`
 
 const teamTeckStack = [
     {
@@ -54,9 +17,9 @@ const teamTeckStack = [
 const Career = () => {
     return (
         <div className="whitespace-pre-line py-4 text-sm sm:text-base">
-            <CareerPeriodWrap>
+            <div className='career_period_wrap'>
                 <Title title={ '2021.08.02 ~ 재직중 ' } size="S" />
-            </CareerPeriodWrap>
+            </div>
 
             <div className="pt-3 pb-8 text-sm sm:text-base">
                 <b>비대면 결제 서비스</b>를 주력으로 하는 <b>핀테크 스타트업</b> 페이민트에서 근무했습니다. 
@@ -68,7 +31,7 @@ const Career = () => {
                 현재는 매니저 사이트와 어드민 사이트 위주로 프론트를 맡고 있으며, 청구서 프로젝트의 <b>마이그레이션(Next.js) 작업을 진행</b>하고 있습니다.
             </div>
 
-            <TeckStackWrap>
+            <div className='teck_stack_wrap'>
                 {
                     teamTeckStack.map((teamTeckStack) => (
                         <div key={teamTeckStack.id} className='sm:flex sm:items-start pb-[10px]'>
@@ -83,7 +46,7 @@ const Career = () => {
                         </div>
                     ))
                 }
-            </TeckStackWrap>
+            </div>
         </div>
     )
 }
