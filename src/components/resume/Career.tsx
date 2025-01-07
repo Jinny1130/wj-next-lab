@@ -22,7 +22,7 @@ const TeckStackWrap = styled.div`
         & > p {
             margin-left: 10px;
         }
-        code {
+        .teck {
             font-size: 16px;
             background-color: whitesmoke;
             padding: 2px 4px;
@@ -76,7 +76,7 @@ const Career = () => {
                             <div className='w-full sm:w-[calc(100% - 180px)]'>
                                 {
                                     teamTeckStack.teckList.map((teck) => (
-                                        <code key={teck} className='teck'>{ teck }</code>
+                                        <span key={teck} className='teck'>{ teck }</span>
                                     ))
                                 }
                             </div>

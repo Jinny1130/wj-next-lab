@@ -1,5 +1,4 @@
 import { StickyTitleInfo, DetailWorkExperienceInfo, WorkPageAbout } from "@/types/ResumeTypes"
-import { describe } from "node:test"
 
 export const workExperienceList: StickyTitleInfo[] = [
     {

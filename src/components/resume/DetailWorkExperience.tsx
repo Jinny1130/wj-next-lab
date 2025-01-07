@@ -2,11 +2,13 @@
 
 import styled from 'styled-components';
 import { detailWorkExperiences } from '@/constants/resume/workExperience';
+import { detailOtherExperiences } from '@/constants/resume/otherExperience';
 import DetailExperienceTitle from '@/components/resume/DetailExperienceTitle';
 import DotWithText from '@/components/resume/DotWithText';
 
 interface OwnProps {
     workId: string,
+    workCategory?: string,
 }
 
 const DetailWorkExperienceWrap = styled.div`
@@ -29,8 +31,10 @@ const DetailWorkExperienceWrap = styled.div`
     }
 `
 
-const DetailWorkExperience:React.FC<OwnProps> = ({ workId }) => {
+const DetailWorkExperience:React.FC<OwnProps> = ({ workId, workCategory }) => {
     
+    const experiences = workCategory ? detailOtherExperiences : detailWorkExperiences;
+
     const detailWorkExperienceClassName = (index:number, workId:string) => {
         if(index === 0) {
             if(workId === 'other') {
@@ -45,7 +49,7 @@ const DetailWorkExperience:React.FC<OwnProps> = ({ workId }) => {
     return (
         <DetailWorkExperienceWrap>
             {
-                detailWorkExperiences[workId].map((work, index) => (
+                experiences[workId].map((work, index) => (
                     <div className={detailWorkExperienceClassName(index, workId)} key={index}>
                         <DetailExperienceTitle detailTitle={work.title} detailPeriod={work.period} />
 

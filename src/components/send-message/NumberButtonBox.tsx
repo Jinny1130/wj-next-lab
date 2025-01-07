@@ -6,8 +6,8 @@ import { ReactNode, useEffect, useState } from "react";
 import NumberButton from "./NumberButton";
 import { ButtonNumber, ButtonNumbers } from "@/types/SendMessageTypes";
 import { Jua } from "next/font/google";
-import ArrowIcon from "../common/ArrowIcon";
-import SendIcon from '../common/SendIcon';
+import ArrowIcon from "@/components/common/ArrowIcon";
+import SendIcon from '@/components/common/SendIcon';
 import Image from 'next/image';
 
 AWS.config.update({

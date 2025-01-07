@@ -18,6 +18,10 @@ const Mark = styled.i`
     width: 10px;
     height: 10px;
     margin-right: 2px;
+    & + p {
+        max-width: calc(100% - 36px);
+        word-break: keep-all;
+    }
 `
 
 const StickyTitle:React.FC<OwnProps> = ({ stickyTitleInfo }) => {

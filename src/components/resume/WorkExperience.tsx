@@ -1,5 +1,3 @@
-'use-client'
-
 import styled from 'styled-components';
 import Title from "@/components/resume/Title"
 import StickyTitle from "@/components/resume/StickyTitle"
