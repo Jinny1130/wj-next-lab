@@ -22,7 +22,7 @@ const Mark = styled.i`
 
 const StickyTitle:React.FC<OwnProps> = ({ stickyTitleInfo }) => {
     return (
-        <div className={`w-full h-fit font-semibold text-sky-500 bg-white py-4 sticky top-14 sm:top-16 sm:w-[22%] mr-[20px] ${stickyTitleInfo.id === 'paymint' ? ' text-[22px]' : 'text-[20px]'}`}>
+        <div className={`w-full h-fit font-semibold text-sky-500 bg-white py-4 sticky top-14 sm:top-16 sm:w-[24%] mr-[20px] ${stickyTitleInfo.id === 'paymint' ? ' text-[22px]' : 'text-[20px]'}`}>
             {
                 stickyTitleInfo.link ?
                 <Link href={ stickyTitleInfo.link || '' } target="_blank" className="flex items-center hover:underline">
