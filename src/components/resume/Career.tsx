@@ -38,8 +38,18 @@ const TeckStackWrap = styled.div`
     }
 `
 
-const teamMainTeckStack = ['Vue', 'Vuex', 'Vue-Router', 'Javascript', 'Webpack', 'Axios', 'SCSS', 'CSS', 'GitLab', 'Jira', 'Confluence', 'Slack'];
-const teamSubTeckStack = ['Next.js', 'React', 'Typescript', 'Jotai'];
+const teamTeckStack = [
+    {
+        id: 'main',
+        title: 'Team Main Teck Stack',
+        teckList: ['Vue', 'Vuex', 'Vue-Router', 'Javascript', 'Webpack', 'Axios', 'SCSS', 'CSS', 'GitLab', 'Jira', 'Confluence', 'Slack']
+    },
+    {
+        id: 'sub',
+        title: 'Team Sub Teck Stack',
+        teckList: ['Next.js', 'React', 'Typescript', 'Jotai', 'styled-components', 'Tailwind']
+    }
+]
 
 const Career = () => {
     return (
@@ -59,26 +69,20 @@ const Career = () => {
             </div>
 
             <TeckStackWrap>
-                <div className='sm:flex sm:items-start pb-[10px]'>
-                    <DetailExperienceTitle  detailTitle={'Team Main Teck Stack'} />
-                    <div className='w-full sm:w-[calc(100% - 180px)]'>
-                        {
-                            teamMainTeckStack.map((teck) => (
-                                <code key={teck} className='teck'>{ teck }</code>
-                            ))
-                        }
-                    </div>
-                </div>
-                <div className='sm:flex sm:items-center'>
-                    <DetailExperienceTitle  detailTitle={'Team Sub Teck Stack'} />
-                    <div className='w-full sm:w-[calc(100% - 180px)]'>
-                        {
-                            teamSubTeckStack.map((teck) => (
-                                <code key={teck}>{ teck }</code>
-                            ))
-                        }
-                    </div>
-                </div>
+                {
+                    teamTeckStack.map((teamTeckStack) => (
+                        <div key={teamTeckStack.id} className='sm:flex sm:items-start pb-[10px]'>
+                            <DetailExperienceTitle  detailTitle={teamTeckStack.title} />
+                            <div className='w-full sm:w-[calc(100% - 180px)]'>
+                                {
+                                    teamTeckStack.teckList.map((teck) => (
+                                        <code key={teck} className='teck'>{ teck }</code>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    ))
+                }
             </TeckStackWrap>
         </div>
     )

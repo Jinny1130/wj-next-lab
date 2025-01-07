@@ -20,7 +20,7 @@ const DetailWorkExperience:React.FC<OwnProps> = ({ workId }) => {
         <DetailWorkExperienceWrap>
             {
                 detailWorkExperiences[workId].map((work, index) => (
-                    <div className="py-8">
+                    <div className={index === 0 ? 'pt-8 pb-6' : 'py-6'} key={index}>
                         <DetailExperienceTitle detailTitle={work.title} detailPeriod={work.period} />
                         {
                             work.describe?.map((workDesc, index) => (
