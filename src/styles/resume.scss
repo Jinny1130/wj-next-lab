@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .resume-wrap {
     >div {
         padding: 60px 0;
@@ -78,9 +82,23 @@
     &::before {
         display: none;
     }
+    .sticky_title{
+        // position: relative;
+        &::after {
+            content: '';
+            width: 100vw;
+            height: 1px;
+            background-color: #f0f0f0;
+            position: absolute;
+            left: -28px;
+            bottom: 0;
+        }
+    }
     @media screen and (min-width: 640px) {
         position: relative;
         width: 24%;
+        height: unset;
+        
         &::before {
             content: '';
             display: block;
@@ -92,6 +110,9 @@
             right: 18px;
             top: 0;
             z-index: 2;
+        }
+        .sticky_title::after {
+            display: none;
         }
     }
 }

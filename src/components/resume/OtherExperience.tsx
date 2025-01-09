@@ -6,13 +6,13 @@ import DetailWorkExperience from "@/components/resume/DetailWorkExperience";
 
 const WorkExperience = () => {
     return (
-        <div>
+        <div id="other_experience">
             <Title title="Other Experience" size="L"/>
 
             {
                 otherExperienceList.map((experience) => {
                     return (
-                        <div key={experience.id} className="px-1 my-5 flex flex-col sm:flex-row">
+                        <div key={experience.id} className="relative px-1 pt-[80px] sm:pt-[0] my-5 flex flex-col sm:flex-row">
                             <StickyTitle stickyTitleInfo={experience} />
 
                             <div className="w-full sm:w-[76%]">
