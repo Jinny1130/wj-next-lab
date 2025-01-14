@@ -1,5 +1,6 @@
 'use client'
 
+import "@/styles/home.scss";
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import { useEffect, useState } from "react"
@@ -39,7 +40,10 @@ export default function Home() {
     return (
         <div>
             <Header />
-
+            <div className='is_not_open_ment'>
+                <span className="text-[22px]">🥲</span>
+                <span>페이지 준비중 입니다.</span>
+            </div>
             <Footer />
         </div>
     );

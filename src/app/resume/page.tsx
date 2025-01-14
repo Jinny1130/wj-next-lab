@@ -33,21 +33,15 @@ export default function ResumeMain () {
 
     return (
         <>
-            <title>최우진 | Resume</title>
-
-            <div>
-                <Header />
-
-                <div className="resume-wrap max-w-4xl pt-24 px-6 mx-auto sm:px-3">
-                    <NameWrap />
-                    <Contact />
-                    <Introduce />
-                    <WorkExperience />
-                    <OtherExperience />
-                </div>
-
-                <Footer />
+            <Header />
+            <div className="resume-wrap max-w-4xl pt-24 px-6 mx-auto sm:px-3">
+                <NameWrap />
+                <Contact />
+                <Introduce />
+                <WorkExperience />
+                <OtherExperience />
             </div>
+            <Footer />
         </>
     );
 }
