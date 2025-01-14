@@ -82,17 +82,14 @@ html {
     &::before {
         display: none;
     }
-    .sticky_title{
-        // position: relative;
-        &::after {
-            content: '';
-            width: 100vw;
-            height: 1px;
-            background-color: #f0f0f0;
-            position: absolute;
-            left: -28px;
-            bottom: 0;
-        }
+    .sticky_title::after {
+        content: '';
+        width: 100vw;
+        height: 1px;
+        background-color: #f0f0f0;
+        position: absolute;
+        left: -28px;
+        bottom: 0;
     }
     @media screen and (min-width: 640px) {
         position: relative;
