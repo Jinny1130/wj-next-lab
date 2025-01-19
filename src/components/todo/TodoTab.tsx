@@ -1,13 +1,9 @@
-'use client'
+'use client';
 
 interface TodoProps {
-    selectedDay: string,
+  selectedDay: string;
 }
 
-export default function TodoTab (props:TodoProps) {
-    return (
-        <div>
-            {props.selectedDay}
-        </div>
-    )
+export default function TodoTab(props: TodoProps) {
+  return <div>{props.selectedDay}</div>;
 }

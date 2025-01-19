@@ -1,14 +1,16 @@
 interface OwnProps {
-    title?: String,
-    size: String   
+  title?: String;
+  size: String;
 }
 
-const Title:React.FC<OwnProps> = ({title, size}) => {
-    return (
-        <div className={`blue_title text-sky-500 font-semibold ${size === 'M' ? 'text-2xl sm:text-3xl'  : size === 'S' ? 'text-lg sm:text-xl' : 'text-4xl'}`}>
-            {title}.
-        </div>
-    )
-}
+const Title: React.FC<OwnProps> = ({ title, size }) => {
+  return (
+    <div
+      className={`blue_title text-sky-500 font-semibold ${size === 'M' ? 'text-2xl sm:text-3xl' : size === 'S' ? 'text-lg sm:text-xl' : 'text-4xl'}`}
+    >
+      {title}.
+    </div>
+  );
+};
 
-export default Title
+export default Title;
