@@ -20,11 +20,15 @@ const Introduce = () => {
           <br />
           아래의 내용은 업무 과정에서 경험한{' '}
           <b>
-            <a href="#work_experience">Work Experience</a>
+            <a href="#work_experience" style={{ textDecoration: 'underline' }}>
+              Work Experience
+            </a>
           </b>
           , 개인 프로젝트를 개발하고 기술을 학습하며 경험한{' '}
           <b>
-            <a href="#other_experience">Other Experience</a>
+            <a href="#other_experience" style={{ textDecoration: 'underline' }}>
+              Other Experience
+            </a>
           </b>{' '}
           구성되어 있습니다.
         </p>
