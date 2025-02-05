@@ -28,7 +28,7 @@ const teamTeckStack = [
       'React',
       'Typescript',
       'Jotai',
-      'styled-components',
+      'emotion/styled',
       'Tailwind',
     ],
   },

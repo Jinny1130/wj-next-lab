@@ -1,6 +1,4 @@
-'use-client';
-
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { detailWorkExperiences } from '@/constants/resume/workExperience';
 import { detailOtherExperiences } from '@/constants/resume/otherExperience';
 import DetailExperienceTitle from '@/container/resume/components/DetailExperienceTitle';
