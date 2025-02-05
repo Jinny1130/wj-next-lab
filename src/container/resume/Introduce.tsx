@@ -1,6 +1,6 @@
 import Title from '@/container/resume/components/Title';
 
-const Introduce = () => {
+export default function Introduce() {
   return (
     <div>
       <Title title="Introduce" size="L" />
@@ -35,6 +35,4 @@ const Introduce = () => {
       </div>
     </div>
   );
-};
-
-export default Introduce;
+}

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Header = () => {
+export default function Header() {
   return (
     <div
       id="header"
@@ -21,6 +21,4 @@ const Header = () => {
       <div className=""></div>
     </div>
   );
-};
-
-export default Header;
+}

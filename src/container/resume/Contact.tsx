@@ -16,7 +16,7 @@ const contact = {
   },
 };
 
-const ContactAndSkill = () => {
+export default function ContactAndSkill() {
   return (
     <div className="contact-wrap w-full flex flex-col items-center sm:flex-row sm:justify-between">
       <div className="myself-image w-full mb-10 rounded-md sm:rounded-full sm:w-1/3 sm:mb-0 md:mr-20 sm:mr-10">
@@ -52,6 +52,4 @@ const ContactAndSkill = () => {
       </div>
     </div>
   );
-};
-
-export default ContactAndSkill;
+}

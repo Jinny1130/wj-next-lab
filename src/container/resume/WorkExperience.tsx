@@ -7,7 +7,7 @@ import StickyTitle from '@/container/resume/components/StickyTitle';
 import Career from '@/container/resume/Career';
 import DetailWorkExperience from '@/container/resume/DetailWorkExperience';
 
-const WorkExperience = () => {
+export default function WorkExperience() {
   return (
     <div id="work_experience">
       <Title title="Work Experience" size="L" />
@@ -44,6 +44,4 @@ const WorkExperience = () => {
       })}
     </div>
   );
-};
-
-export default WorkExperience;
+}

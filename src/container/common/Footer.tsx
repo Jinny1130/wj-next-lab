@@ -4,6 +4,25 @@ interface Props {
   footerFor?: string;
 }
 
+export default function Footer({ footerFor }: Props) {
+  return (
+    <FooterWrap>
+      <div
+        className={`max-w-4xl mx-auto px-6 text-center flex flex-col items-center justify-center py-24 text-gray-400 text-[13px] bg-transparent ${footerFor === 'sendMessage' ? 'send_message_footer' : ''}`}
+      >
+        <p>
+          본 페이지는 상업적 목적이 아닌
+          <br className="block sm:hidden" />
+          비영리적 개인 포트폴리오용으로 만들어진 사이트입니다.
+          <br />
+          <br />본 페이지는 React, Next.js, Vercel 을 이용해서 제작하였습니다.
+        </p>
+        <p className="mt-3">woojin choi ⓒ 2024</p>
+      </div>
+    </FooterWrap>
+  );
+}
+
 const FooterWrap = styled.div`
   > .send_message_footer {
     width: 100%;
@@ -24,25 +43,3 @@ const FooterWrap = styled.div`
     }
   }
 `;
-
-const Footer = ({ footerFor }: Props) => {
-  return (
-    <FooterWrap>
-      <div
-        className={`max-w-4xl mx-auto px-6 text-center flex flex-col items-center justify-center py-24 text-gray-400 text-[13px] bg-transparent ${footerFor === 'sendMessage' ? 'send_message_footer' : ''}`}
-      >
-        <p>
-          본 페이지는 상업적 목적이 아닌
-          <br className="block sm:hidden" />
-          비영리적 개인 포트폴리오용으로 만들어진 사이트입니다.
-          <br />
-          본 페이지는 React, Next.js, Vercel 을 이용해서 제작하였습니다.
-          <br />
-        </p>
-        <p className="mt-3">woojin choi ⓒ 2024</p>
-      </div>
-    </FooterWrap>
-  );
-};
-
-export default Footer;

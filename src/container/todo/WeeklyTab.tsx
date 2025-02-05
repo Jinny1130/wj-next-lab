@@ -19,7 +19,7 @@ const weeklyTabMenu: Week = [
   { id: 'sun', name: 'SUN' },
 ];
 
-const WeeklyTab = (props: TodoProps) => {
+export default function WeeklyTab(props: TodoProps) {
   function selectTab(id: string) {
     props.seletWeeklyTab(id);
   }
@@ -53,6 +53,4 @@ const WeeklyTab = (props: TodoProps) => {
       })}
     </div>
   );
-};
-
-export default WeeklyTab;
+}

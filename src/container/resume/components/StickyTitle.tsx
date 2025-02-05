@@ -6,7 +6,7 @@ interface OwnProps {
   stickyTitleInfo: StickyTitleInfo;
 }
 
-const StickyTitle: React.FC<OwnProps> = ({ stickyTitleInfo }) => {
+export default function StickyTitle({ stickyTitleInfo }: OwnProps) {
   return (
     <div className="sticky_title_wrap absolute top-0 left-0 h-full z-[9]">
       <div
@@ -38,6 +38,4 @@ const StickyTitle: React.FC<OwnProps> = ({ stickyTitleInfo }) => {
       </div>
     </div>
   );
-};
-
-export default StickyTitle;
+}

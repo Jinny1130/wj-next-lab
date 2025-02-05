@@ -34,7 +34,7 @@ const teamTeckStack = [
   },
 ];
 
-const Career = () => {
+export default function Career() {
   return (
     <div className="whitespace-pre-line py-4 text-sm sm:text-base">
       <div className="career_period_wrap">
@@ -80,6 +80,4 @@ const Career = () => {
       </div>
     </div>
   );
-};
-
-export default Career;
+}

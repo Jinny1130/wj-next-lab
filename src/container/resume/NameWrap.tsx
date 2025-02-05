@@ -1,4 +1,4 @@
-const NameWrap = () => {
+export default function NameWrap() {
   return (
     <div className="name-wrap flex items-center w-full">
       <i className="block w-2 h-12 bg-sky-200 mr-1.5" />
@@ -8,6 +8,4 @@ const NameWrap = () => {
       </div>
     </div>
   );
-};
-
-export default NameWrap;
+}

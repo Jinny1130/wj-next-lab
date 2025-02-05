@@ -11,27 +11,10 @@ interface OwnProps {
   workCategory?: string;
 }
 
-const DetailWorkExperienceWrap = styled.div`
-  letter-spacing: -0.2px;
-
-  .detail_exp_title .blue_title {
-    font-size: 18px;
-  }
-  .project_summary {
-    &::before {
-      content: '';
-      display: block;
-      width: 3px;
-      height: calc(100% - 22px);
-      background-color: #e0e0e0;
-      position: absolute;
-      top: 8px;
-      left: 0;
-    }
-  }
-`;
-
-const DetailWorkExperience: React.FC<OwnProps> = ({ workId, workCategory }) => {
+export default function DetailWorkExperience({
+  workId,
+  workCategory,
+}: OwnProps) {
   const experiences = workCategory
     ? detailOtherExperiences
     : detailWorkExperiences;
@@ -79,6 +62,24 @@ const DetailWorkExperience: React.FC<OwnProps> = ({ workId, workCategory }) => {
       ))}
     </DetailWorkExperienceWrap>
   );
-};
+}
 
-export default DetailWorkExperience;
+const DetailWorkExperienceWrap = styled.div`
+  letter-spacing: -0.2px;
+
+  .detail_exp_title .blue_title {
+    font-size: 18px;
+  }
+  .project_summary {
+    &::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: calc(100% - 22px);
+      background-color: #e0e0e0;
+      position: absolute;
+      top: 8px;
+      left: 0;
+    }
+  }
+`;

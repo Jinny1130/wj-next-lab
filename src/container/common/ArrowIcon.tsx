@@ -7,7 +7,7 @@ interface IconProps {
   className: string;
 }
 
-const ArrowIcon = (props: IconProps) => {
+export default function ArrowIcon(props: IconProps) {
   return (
     <svg
       className={props.className}
@@ -23,6 +23,4 @@ const ArrowIcon = (props: IconProps) => {
       </g>
     </svg>
   );
-};
-
-export default ArrowIcon;
+}

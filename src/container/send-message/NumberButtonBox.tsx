@@ -22,7 +22,7 @@ interface BoxProps {
   className: string;
 }
 
-const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
+export default function NumberButtonBox(boxProps: BoxProps) {
   const [selectedNumbers, setSelectedNumbers] = useState<ButtonNumbers>([
     1, 2, 3, 4, 5, 6, 7, 8,
   ]);
@@ -277,6 +277,4 @@ const NumberButtonBox: React.FC<BoxProps> = (boxProps) => {
       </div>
     </div>
   );
-};
-
-export default NumberButtonBox;
+}

@@ -5,7 +5,7 @@ interface OwnProps {
   textSize: string;
 }
 
-const DotWithText: React.FC<OwnProps> = ({ sideText, textSize }) => {
+export default function DotWithText({ sideText, textSize }: OwnProps) {
   return (
     <div className={`dot_with_text w-full py-2`}>
       <p className="flex items-start justify-between">
@@ -19,6 +19,4 @@ const DotWithText: React.FC<OwnProps> = ({ sideText, textSize }) => {
       </p>
     </div>
   );
-};
-
-export default DotWithText;
+}

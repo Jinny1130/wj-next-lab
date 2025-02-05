@@ -5,10 +5,10 @@ interface OwnProps {
   detailPeriod?: string;
 }
 
-const DetailExperienceTitle: React.FC<OwnProps> = ({
+export default function DetailExperienceTitle({
   detailTitle,
   detailPeriod,
-}) => {
+}: OwnProps) {
   return (
     <div className="detail_exp_title flex flex-col sm:flex-row sm:items-center justify-between pb-2">
       {detailTitle && <Title title={detailTitle} size="S" />}
@@ -17,6 +17,4 @@ const DetailExperienceTitle: React.FC<OwnProps> = ({
       )}
     </div>
   );
-};
-
-export default DetailExperienceTitle;
+}
