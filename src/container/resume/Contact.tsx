@@ -39,7 +39,7 @@ export default function ContactAndSkill() {
                   {key}
                 </p>
                 <a
-                  className="w-3/4 text-sm text-gray-400 underline hover:text-sky-400"
+                  className="w-3/4 text-sm text-gray-400 underline underline-offset-4 hover:text-sky-400"
                   href={`${key === 'Email' ? 'mailto:' : ''}${value.link}`}
                   target={key !== 'Email' ? '_blank' : ''}
                 >
