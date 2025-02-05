@@ -1,4 +1,4 @@
-import WoojinnyBlog from '@/components/blog/WoojinnyBlog';
+import WoojinnyBlog from '@/container/blog/WoojinnyBlog';
 
 export default function WoojinnyBlogMain() {
   return <WoojinnyBlog />;

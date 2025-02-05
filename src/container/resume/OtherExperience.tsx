@@ -1,11 +1,11 @@
-import Title from '@/components/resume/Title';
-import StickyTitle from '@/components/resume/StickyTitle';
 import {
   otherExperienceList,
   otherPageAbout,
 } from '@/constants/resume/otherExperience';
-import Career from '@/components/resume/Career';
-import DetailWorkExperience from '@/components/resume/DetailWorkExperience';
+import Title from '@/container/resume/components/Title';
+import StickyTitle from '@/container/resume/components/StickyTitle';
+import Career from '@/container/resume/Career';
+import DetailWorkExperience from '@/container/resume/DetailWorkExperience';
 
 const WorkExperience = () => {
   return (

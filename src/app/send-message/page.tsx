@@ -1,7 +1,7 @@
 'use client';
 
-import NumberButtonBox from '@/components/send-message/NumberButtonBox';
-import Footer from '@/components/common/Footer';
+import NumberButtonBox from '@/container/send-message/NumberButtonBox';
+import Footer from '@/container/common/Footer';
 
 export default function SendMessageMain() {
   return (

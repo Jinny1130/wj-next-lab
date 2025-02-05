@@ -1,14 +1,14 @@
 'use-client';
 
-import AWS from 'aws-sdk';
 import '@/styles/send-message.scss';
-import { ReactNode, useEffect, useState } from 'react';
-import NumberButton from './NumberButton';
-import { ButtonNumber, ButtonNumbers } from '@/types/SendMessageTypes';
+import AWS from 'aws-sdk';
 import { Jua } from 'next/font/google';
-import ArrowIcon from '@/components/common/ArrowIcon';
-import SendIcon from '@/components/common/SendIcon';
+import { ReactNode, useEffect, useState } from 'react';
+import { ButtonNumber, ButtonNumbers } from '@/types/SendMessageTypes';
 import Image from 'next/image';
+import NumberButton from '@/container/send-message/NumberButton';
+import ArrowIcon from '@/container/common/ArrowIcon';
+import SendIcon from '@/container/common/SendIcon';
 
 AWS.config.update({
   accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,

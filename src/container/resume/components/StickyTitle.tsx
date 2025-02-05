@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { StickyTitleInfo } from '@/types/ResumeTypes';
-import NewTabIcon from '@/components/common/NewTabIcon';
+import NewTabIcon from '@/container/common/NewTabIcon';
 
 interface OwnProps {
   stickyTitleInfo: StickyTitleInfo;

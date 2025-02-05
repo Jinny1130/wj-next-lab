@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Title from './Title';
+import Title from '@/container/resume/components/Title';
 
 const contact = {
   Email: {

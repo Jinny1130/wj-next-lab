@@ -1,4 +1,4 @@
-import Title from './Title';
+import Title from '@/container/resume/components/Title';
 
 const Introduce = () => {
   return (

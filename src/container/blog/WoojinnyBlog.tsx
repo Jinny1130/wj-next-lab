@@ -1,10 +1,10 @@
+import '@/styles/blog.scss';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import '@/styles/blog.scss';
 
 export default async function WoojinnyBlog() {
-  const mdFolderPath = path.join(process.cwd(), 'src/components/blog/markdown');
+  const mdFolderPath = path.join(process.cwd(), 'src/container/blog/markdown');
   const fileNames = fs.readdirSync(mdFolderPath);
 
   const posts = fileNames.map((fileName) => {

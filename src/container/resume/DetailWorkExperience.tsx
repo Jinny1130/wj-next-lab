@@ -3,8 +3,8 @@
 import styled from 'styled-components';
 import { detailWorkExperiences } from '@/constants/resume/workExperience';
 import { detailOtherExperiences } from '@/constants/resume/otherExperience';
-import DetailExperienceTitle from '@/components/resume/DetailExperienceTitle';
-import DotWithText from '@/components/resume/DotWithText';
+import DetailExperienceTitle from '@/container/resume/components/DetailExperienceTitle';
+import DotWithText from '@/container/resume/components/DotWithText';
 
 interface OwnProps {
   workId: string;

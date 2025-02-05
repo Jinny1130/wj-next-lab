@@ -1,4 +1,4 @@
-import Title from '@/components/resume/Title';
+import Title from '@/container/resume/components/Title';
 
 interface OwnProps {
   detailTitle?: string;

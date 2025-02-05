@@ -1,5 +1,5 @@
-import DetailExperienceTitle from '@/components/resume/DetailExperienceTitle';
-import Title from '@/components/resume/Title';
+import Title from '@/container/resume/components/Title';
+import DetailExperienceTitle from '@/container/resume/components/DetailExperienceTitle';
 
 const teamTeckStack = [
   {

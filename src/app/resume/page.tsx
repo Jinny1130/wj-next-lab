@@ -1,14 +1,14 @@
 'use client';
 
 import '@/styles/resume.scss';
-import Header from '@/components/common/Header';
-import NameWrap from '@/components/resume/NameWrap';
-import Contact from '@/components/resume/Contact';
-import Introduce from '@/components/resume/Introduce';
-import WorkExperience from '@/components/resume/WorkExperience';
-import OtherExperience from '@/components/resume/OtherExperience';
-import Footer from '@/components/common/Footer';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import Header from '@/container/common/Header';
+import NameWrap from '@/container/resume/NameWrap';
+import Contact from '@/container/resume/Contact';
+import Introduce from '@/container/resume/Introduce';
+import WorkExperience from '@/container/resume/WorkExperience';
+import OtherExperience from '@/container/resume/OtherExperience';
+import Footer from '@/container/common/Footer';
 
 export default function ResumeMain() {
   useEffect(() => {

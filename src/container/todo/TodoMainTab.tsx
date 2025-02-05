@@ -1,8 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { DayWithIndex } from '@/types/TodoTypes';
 import Image from 'next/image';
-import { useState } from 'react';
 
 interface TodoProps {
   weeklyButtons: DayWithIndex[];

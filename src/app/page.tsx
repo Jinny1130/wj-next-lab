@@ -1,9 +1,9 @@
 'use client';
 
 import '@/styles/home.scss';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
 import { useEffect, useState } from 'react';
+import Header from '@/container/common/Header';
+import Footer from '@/container/common/Footer';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState('pc');
