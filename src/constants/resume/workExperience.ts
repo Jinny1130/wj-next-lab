@@ -12,14 +12,20 @@ export const workExperienceList: StickyTitleInfo[] = [
     addExplanation: '페이민트 회사 페이지로 연결됩니다.',
   },
   {
+    id: 'payssam',
+    title: '결제선생',
+    link: 'https://payssam.kr',
+    addExplanation: '결제선생 공식 안내 웹사이트',
+  },
+  {
     id: 'admin',
     title: '어드민(Back Office)',
   },
   {
     id: 'manager',
     title: '결제선생 - 매니저',
-    link: 'https://payssam.kr',
-    addExplanation: '서비스 안내 랜딩으로 연결됩니다.',
+    link: 'https://manager.payssam.kr',
+    addExplanation: '서비스 로그인 페이지로 연결됩니다.',
   },
   {
     id: 'bill',
@@ -40,28 +46,34 @@ export const workExperienceList: StickyTitleInfo[] = [
 ];
 
 export const workPageAbout: Record<string, WorkPageAbout> = {
+  payssam: {
+    period: '',
+    pageAbout:
+      '결제선생 랜딩페이지는 페이민트의 대표 서비스인 ‘결제선생’을 소개하며, 사용자들이 서비스의 주요 기능과 가치를 쉽게 이해할 수 있도록 설계된 페이지입니다. 기존의 <b>Vue2 기반 프로젝트를 Next.js로 마이그레이션</b>하며 UI/UX 전반을 전면 개편했고, 이를 통해 사용자 경험을 크게 향상시켰습니다.',
+  },
+
   admin: {
     period: '',
     pageAbout:
-      '사내 백오피스 페이지로, 노후화 된 UI/UX를 가진 기존 어드민1.0의 사용성 저하 및 업무 활용에 어려움이 있어, <b>어드민 2.0으로 리뉴얼</b> 하였습니다. <b>신규 구축 및 개발 리드</b>를 담당 하였으며, 주로 기존에 있는 업무 프로세스를 <b>2.0 페이지로 이관 및 재구성</b>하는 작업과, 수동으로 처리하던 업무 프로세스를 2.0의 <b>신규 메뉴로 추가</b>하는 개발 작업을 하였습니다. <br/>사내 관리 업무 툴로 페이지를 최대한 활용할 수 있도록하여 <b>업무 효용률</b>을 효과적으로 <b>향상</b>시킬 수 있었습니다.',
+      '페이민트의 사내 백오피스 페이지로, 기존 어드민1.0의 노후화된 UI/UX로 인해 업무 효율성이 저하되었던 문제를 해결하기 위해 <b>어드민 2.0 으로 새롭게 구축</b>되었습니다. <b>신규 개발 및 리드</b>를 담당하며, 기존 프로세스를 <b>2.0으로 이관 및 최적화</b>하고, 수동으로 처리되던 업무를 <b>자동화된 신규 메뉴</b>로 추가하여 <b>업무 효율성을 크게 향상</b>시켰습니다.',
   },
 
   manager: {
     period: '',
     pageAbout:
-      '결제선생 <b>서비스 유저가 이용</b>하는 사이트로 사업장 등록, 청구서 관리 및 발송, 청구서 수신 고객 관리 등 여러가지의 기능을 제공합니다. 주로 다양한 서비스의 <b>프로세스 리뉴얼 및 기존 UI/UX 개선 작업</b>을 하였으며, 사용자 경험을 개선하기 위해 지속적으로 기능을 <b>업데이트 및 최적화</b>했습니다.',
+      '결제선생 <b>서비스 이용자</b>를 위한 사이트로, 사업장 등록, 청구서 관리 및 발송, 고객 관리 등 다양한 기능을 제공합니다. <b>프로세스 리뉴얼 및 UI/UX 개선 작업</b>을 통해 사용자 경험을 지속적으로 최적화하며, 서비스의 가치를 높이는 데 주력하였습니다.',
   },
 
   bill: {
     period: '',
     pageAbout:
-      "결제선생 서비스를 이용하는 사업장에서 사업장 이용 고객에게 발송하는 <b>결제 청구 페이지</b>입니다. 이 페이지는 <b>'앱카드', 'KEY IN', '자동결제', '간편결제(페이앱)', '뱅킹앱' 등 다양한 결제 수단</b>을 제공하며, 고객은 별도의 앱 다운로드 없이 <b>카카오톡으로 청구서를 수신하고 결제</b>할 수 있습니다.",
+      "결제선생 서비스를 이용하는 사업장에서 고객에게 발송하는 <b>결제 청구 페이지</b>입니다. 고객은 <b>'앱카드', 'KEY IN', '자동결제', '간편결제(페이앱)', '뱅킹앱'</b> 등 다양한 결제 수단을 통해 별도의 앱 설치 없이 <b>카카오톡으로 청구서를 받고 결제</b>할 수 있습니다.",
   },
 
   hissam: {
     period: '',
     pageAbout:
-      '출결선생은 결제선생 사업장 중 <b>출석체크 기능</b>을 사용하는 사업장에 제공되는 서비스입니다. <b>수업 클래스와 학생을 등록</b>할 수 있으며, 학생 출석체크를 완료하면 보호자에게 <b>출결 알림 메시지가 전송</b>되는 기능을 주로 제공하고 있습니다.',
+      '출결선생은 결제선생 사업장 중 <b>출석체크 기능</b>을 필요로 하는 사업장을 위한 서비스입니다. <b>수업 클래스와 학생 등록</b> 기능을 제공하며, 출석체크 완료 시 보호자에게 <b>출결 알림 메시지</b>를 자동으로 전송합니다.',
   },
 
   other: {
@@ -72,6 +84,20 @@ export const workPageAbout: Record<string, WorkPageAbout> = {
 
 export const detailWorkExperiences: Record<string, DetailWorkExperienceInfo[]> =
   {
+    payssam: [
+      {
+        title: '기존 Vue2 기반 페이지 Next.js로 마이그레이션',
+        period: '26.02 ~ 26.03',
+        describe: [
+          '기존 Vue 2 기반의 웹사이트를 <b>Next.js 15</b> 기반으로 전면<b> 마이그레이션</b> 하였습니다.',
+          '<b>메타태그를 페이지별로 나누어 설정</b>하고, 이러한 메타태그를 체계적으로 관리할 수 있는 구조가 필요했습니다. 따라서 <b>미래의 기능 확장과 SEO 최적화</b>를 위해 <b>Next.js를 선택</b>하여 마이그레이션을 진행하였습니다.',
+          '<b>컴포넌트를 단일 책임 기준</b>으로 작게 나누어 재사용성을 높였고, 프론트엔드 작업자 간의 <b>협업이 훨씬 원활</b>해졌습니다. 이로 인해 전체 <b>개발 기간도 약 1주 단축</b>할 수 있었습니다.',
+          '기존 수동 배포 방식에서 <b>GitLab Runner와 Docker</b> 기반의 <b>CI/CD 배포 환경을 활용</b>하여 작업했으며, 수동 배포로 인한 반복 작업과 오류를 줄일 수 있었습니다.',
+          '<b>Styled-components를 활용</b>해 컴포넌트 내부에서 버튼, 텍스트, 섹션 등 엘리먼트의 <b>시멘틱한 역할을 분리</b>하였으며, 그 결과로 협업 시 코드 이해도와 유지보수성을 향상 시킬 수 있었습니다.',
+        ],
+      },
+    ],
+
     admin: [
       {
         title: '어드민2.0 - 구축 및 개발 리드',
@@ -123,6 +149,7 @@ export const detailWorkExperiences: Record<string, DetailWorkExperienceInfo[]> =
         ],
       },
     ],
+
     manager: [
       {
         title: '매니저 - 신규 개발 및 유지보수',
@@ -156,6 +183,7 @@ export const detailWorkExperiences: Record<string, DetailWorkExperienceInfo[]> =
         ],
       },
     ],
+
     bill: [
       {
         title: '청구서 - 신규 개발 및 유지보수',
@@ -174,6 +202,7 @@ export const detailWorkExperiences: Record<string, DetailWorkExperienceInfo[]> =
         ],
       },
     ],
+
     hissam: [
       {
         title: '출결선생 - 출석체크/조회 페이지 개발',
@@ -185,6 +214,7 @@ export const detailWorkExperiences: Record<string, DetailWorkExperienceInfo[]> =
         ],
       },
     ],
+
     other: [
       {
         title: '결제선생 및 출결선생 체험 키오스크',

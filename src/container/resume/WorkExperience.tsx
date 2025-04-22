@@ -16,7 +16,7 @@ export default function WorkExperience() {
         return (
           <div
             key={experience.id}
-            className="relative px-1 pt-[80px] sm:pt-[0] my-5 flex flex-col sm:flex-row"
+            className="relative px-1 pt-[80px] sm:pt-[0] my-[40px] flex flex-col sm:flex-row"
           >
             <StickyTitle stickyTitleInfo={experience} />
 

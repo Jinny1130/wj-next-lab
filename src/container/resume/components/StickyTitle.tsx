@@ -10,7 +10,7 @@ export default function StickyTitle({ stickyTitleInfo }: OwnProps) {
   return (
     <div className="sticky_title_wrap absolute top-0 left-0 h-full z-[9]">
       <div
-        className={`sticky_title w-full h-fit font-semibold text-sky-500 bg-white py-4 sticky top-14 sm:top-16 ${stickyTitleInfo.id === 'paymint' ? ' text-[22px]' : 'text-[20px]'}`}
+        className={`sticky_title w-full h-fit font-semibold text-sky-500 bg-transparent py-4 sticky top-14 sm:top-16 ${stickyTitleInfo.id === 'paymint' ? ' text-[22px]' : 'text-[20px]'}`}
       >
         {stickyTitleInfo.link ? (
           <Link
