@@ -1,5 +1,5 @@
 ---
-title: '📕 woo-jinny's handbook'
+title: "📕 woo-jinny's handbook"
 date: '2025-02-10'
 ---
 
