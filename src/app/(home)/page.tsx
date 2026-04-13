@@ -37,6 +37,7 @@ export default function Home() {
   return (
     <div>
       <Header />
+      // 여기
       <div className="is_not_open_ment">
         <span className="text-[22px]">🥲</span>
         <span>페이지 준비중 입니다.</span>
